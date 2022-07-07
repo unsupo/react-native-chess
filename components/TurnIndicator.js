@@ -21,17 +21,7 @@ import {
 const TurnIndicactor: () => {
     return (
         <SafeAreaView style={backgroundStyle}>
-            <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-            <ScrollView
-                contentInsetAdjustmentBehavior="automatic"
-                style={backgroundStyle}>
-                <View
-                    style={{
-                        backgroundColor: isDarkMode ? Colors.black : Colors.white,
-                    }}>
-                    <TurnIndicator />
-                </View>
-            </ScrollView>
+            
         </SafeAreaView>
     );
 };
