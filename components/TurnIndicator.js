@@ -20,9 +20,9 @@ import {
 
 const TurnIndicactor: () => {
     return (
-        <SafeAreaView style={backgroundStyle}>
+        <view>
             
-        </SafeAreaView>
+        </view>
     );
 };
 
