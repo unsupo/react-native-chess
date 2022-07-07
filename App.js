@@ -69,7 +69,7 @@ const App: () => Node = () => {
           style={{
             backgroundColor: isDarkMode ? Colors.black : Colors.white,
           }}>
-          <TurnIndicator />
+            <Board />
         </View>
       </ScrollView>
     </SafeAreaView>
