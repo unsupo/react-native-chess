@@ -27,12 +27,12 @@ const pieces = {
     wq: 10,
     wr: 11,
 }
-const defaultBoard = () => {
+const defaultBoard = (w) => {
     const def = Array(w).fill(-1).map(row=>Array(h).fill(-1));
     def[0] = [pieces.br,pieces.bk,pieces.bb,pieces.bq,pieces.bk,pieces.bb,pieces.bk,pieces.br]
-    def[1] = Arra(w).fill(pieces.bp);
+    def[1] = Array(w).fill(pieces.bp);
     def[def.length-2] = [pieces.wr,pieces.wk,pieces.wb,pieces.wq,pieces.wk,pieces.wb,pieces.wk,pieces.wr]
-    def[def.length-1] = Arra(w).fill(pieces.wp);
+    def[def.length-1] = Array(w).fill(pieces.wp);
     return def
 }
 const Board = () => {
@@ -42,7 +42,7 @@ const Board = () => {
     const size = Math.min(windowWidth, windowHeight);
     const [board, setBoard] = useState(Array(w).fill(0).map(row=>Array(h).fill(0)));
 
-    useEffect(()=>setBoard(defaultBoard()),[]);
+    useEffect(()=>setBoard(defaultBoard(w)),[]);
 
     return (
         <View style={{flexDirection: 'row', width: size, height: size, backgroundColor: '#8d00d4'}}>
