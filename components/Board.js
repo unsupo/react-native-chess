@@ -19,7 +19,7 @@ import {
 } from 'react-native';
 
 const Board: () => {
-    const w = h = 8;
+    const w = 8, h = 8;
     const isDarkMode = useColorScheme() === 'dark';
 
     const backgroundStyle = {
