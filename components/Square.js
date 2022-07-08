@@ -15,25 +15,25 @@ import {
 } from 'react-native';
 
 const pieces = [
-    require('../pieces/bb.png'),
-    require('../pieces/bk.png'),
-    require('../pieces/bn.png'),
-    require('../pieces/bp.png'),
-    require('../pieces/bq.png'),
-    require('../pieces/br.png'),
-    require('../pieces/wb.png'),
-    require('../pieces/wk.png'),
-    require('../pieces/wn.png'),
-    require('../pieces/wp.png'),
-    require('../pieces/wq.png'),
-    require('../pieces/wr.png'),
+    <Image source={require('../pieces/bb.png')} />,
+    <Image source={require('../pieces/bk.png')} />,
+    <Image source={require('../pieces/bn.png')} />,
+    <Image source={require('../pieces/bp.png')} />,
+    <Image source={require('../pieces/bq.png')} />,
+    <Image source={require('../pieces/br.png')} />,
+    <Image source={require('../pieces/wb.png')} />,
+    <Image source={require('../pieces/wk.png')} />,
+    <Image source={require('../pieces/wn.png')} />,
+    <Image source={require('../pieces/wp.png')} />,
+    <Image source={require('../pieces/wq.png')} />,
+    <Image source={require('../pieces/wr.png')} />,
 ]
 
 {/*{props.piece < 0 || !props.piece ? <View/> :*/}
 {/*<Image source={require('../pieces/' + pieces[props.piece])}/>}</View>*/}
 const Square = (props) => {
     return (
-        <View style={styles(props)}><Image source={require('../pieces/bb.png')}/></View>
+        <View style={styles(props)}>{pieces[props.piece]}</View>
     );
 };
 
