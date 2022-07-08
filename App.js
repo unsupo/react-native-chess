@@ -29,7 +29,7 @@ const App: () => Node = () => {
     const isDarkMode = useColorScheme() === 'dark';
 
     const backgroundStyle = {
-        backgroundColor: isDarkMode ? Colors.darker : Colors.darker,
+        backgroundColor: '#d0849b',
     };
 
     return (
