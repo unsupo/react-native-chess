@@ -34,7 +34,6 @@ const Board = () => {
 
 const styles = StyleSheet.create({
     board: {
-        flex: 1,
         backgroundColor: '#F5FCFF',
     },
     row: {
