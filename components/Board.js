@@ -13,6 +13,20 @@ import {
 } from 'react-native';
 import Square from "./Square";
 
+const pieces = {
+    bb: 0,
+    bk: 1,
+    bn: 2,
+    bp: 3,
+    bq: 4,
+    br: 5,
+    wb: 6,
+    wk: 7,
+    wn: 8,
+    wp: 9,
+    wq: 10,
+    wr: 11,
+}
 const Board = () => {
     const w = 8; const h = 8;
     const windowWidth = Dimensions.get('window').width;
@@ -37,7 +51,7 @@ const Board = () => {
      */
     const newBoard = () => {
         const def = Array(w).fill(0).map(row=>Array(h).fill(0));
-        def[0] = []
+        def[0] = [br,bk,bb,bq,bk,bb,bk,br]
         setBoard(def)
     }
 };
