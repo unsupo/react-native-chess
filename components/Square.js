@@ -19,7 +19,7 @@ const Square = (props) => {
     );
 };
 
-const styles = StyleSheet.create({
+const styles = (props?: any) => StyleSheet.create({
     width: 120,
     height: 120,
     backgroundColor: '#00BCD4'
