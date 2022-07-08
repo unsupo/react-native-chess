@@ -37,8 +37,8 @@ const defaultBoard = (w,h) => {
     }
     def[0] = [pieces.br,pieces.bk,pieces.bb,pieces.bq,pieces.bk,pieces.bb,pieces.bk,pieces.br]
     def[1] = Array(w).fill(pieces.bp);
-    def[def.length-2] = [pieces.wr,pieces.wk,pieces.wb,pieces.wq,pieces.wk,pieces.wb,pieces.wk,pieces.wr]
-    def[def.length-1] = Array(w).fill(pieces.wp);
+    def[def.length-1] = [pieces.wr,pieces.wk,pieces.wb,pieces.wq,pieces.wk,pieces.wb,pieces.wk,pieces.wr]
+    def[def.length-2] = Array(w).fill(pieces.wp);
     return def
 }
 const Board = () => {
@@ -55,7 +55,7 @@ const Board = () => {
             {[...Array(w)].map((x,i)=>
                 <View style={styles.row} key={i}>
                     {[...Array(h)].map((y,j)=>
-                        <Square v={i+','+j} piece={board[i][j]} key={i+','+j} size={size / w} color={(i+j) % 2 === 0 ? '#d0c1a9' : '#346e37'}/>
+                        <Square v={j+','+i} piece={board[j][i]} key={i+','+j} size={size / w} color={(i+j) % 2 === 0 ? '#d0c1a9' : '#346e37'}/>
                     )}
                 </View>
             )}
