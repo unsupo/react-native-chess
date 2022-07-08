@@ -36,7 +36,7 @@ const Board = () => {
 
     useEffect(()=>{
         newBoard()
-    },[]);
+    });
 
     return (
         <View style={{flexDirection: 'row', width: size, height: size, backgroundColor: '#8d00d4'}}>
