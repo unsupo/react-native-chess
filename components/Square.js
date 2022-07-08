@@ -32,9 +32,12 @@ const pieces = [
 {/*{props.piece < 0 || !props.piece ? <View/> :*/}
 {/*<Image source={require('../pieces/' + pieces[props.piece])}/>}</View>*/}
 const Square = (props) => {
+    function getPiece(piece) {
+        return "./pieces/"+pieces[piece];
+    }
 
     return (
-        <View style={styles(props)}><Image source={require('../pieces/' + pieces[props.piece])}/>}</View>
+        <View style={styles(props)}><Image source={require(getPiece(pieces[props.piece]))}/>}</View>
     );
 };
 
