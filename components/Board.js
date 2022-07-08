@@ -18,7 +18,7 @@ const Board = () => {
     const windowWidth = Dimensions.get('window').width;
     const windowHeight = Dimensions.get('window').height;
     const size = Math.min(windowWidth, windowHeight);
-    const [board, setBoard] = useState(Array(w));
+    const [board, setBoard] = useState(Array(w).fill(0).map(row=>Array(h).fill(0)));
 
     return (
         <View style={{flexDirection: 'row', width: size, height: size, backgroundColor: '#8d00d4'}}>
