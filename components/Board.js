@@ -20,7 +20,7 @@ const Board = () => {
     const size = Math.min(windowWidth, windowHeight);
 
     return (
-        <View style={styles().board}>
+        <View style={styles({flexDirection: ''}).board}>
             {[...Array(w)].map((x,i)=>
                 <View style={styles({flexDirection: i % 2 === 0 ? 'row': 'column'}).row}>
                 [...Array(w)].map((y,j)=>
