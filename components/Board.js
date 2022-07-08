@@ -6,7 +6,7 @@
  * @flow strict-local
  */
 
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {
     Dimensions,
     StyleSheet, View,
@@ -33,6 +33,8 @@ const Board = () => {
     const windowHeight = Dimensions.get('window').height;
     const size = Math.min(windowWidth, windowHeight);
     const [board, setBoard] = useState(Array(w).fill(0).map(row=>Array(h).fill(0)));
+
+    useEffect(()=>newBoard,[]);
 
     return (
         <View style={{flexDirection: 'row', width: size, height: size, backgroundColor: '#8d00d4'}}>
