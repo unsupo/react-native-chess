@@ -36,7 +36,7 @@ const Board = () => {
      * This method sets up a new board in their correct positions
      */
     const newBoard = () => {
-
+        setState()
     }
 };
 
