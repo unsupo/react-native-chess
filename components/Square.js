@@ -7,21 +7,16 @@
  */
 
 import React from 'react';
-import type {Node} from 'react';
 import {
-    SafeAreaView,
-    ScrollView,
-    StatusBar,
     StyleSheet,
-    Text,
-    useColorScheme,
-    View,
+
+
 } from 'react-native';
 
 const Square = () => {
     return (
         <div style={styles}></div>
-        );
+    );
 };
 
 const styles = StyleSheet.create({

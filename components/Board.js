@@ -9,18 +9,11 @@
 import React from 'react';
 import {
     StyleSheet,
-    useColorScheme,
-
 } from 'react-native';
 import Square from "./Square";
 
 const Board = () => {
     const w = 8; const h = 8;
-    const isDarkMode = useColorScheme() === 'dark';
-
-    const backgroundStyle = {
-        backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-    };
 
     return (
         <div style={styles}>
