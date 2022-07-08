@@ -50,8 +50,11 @@ const Board = () => {
      * This method sets up a new board in their correct positions
      */
     const newBoard = () => {
-        const def = Array(w).fill(0).map(row=>Array(h).fill(0));
-        def[0] = [br,bk,bb,bq,bk,bb,bk,br]
+        const def = Array(w).fill(-1).map(row=>Array(h).fill(-1));
+        def[0] = [pieces.br,pieces.bk,pieces.bb,pieces.bq,pieces.bk,pieces.bb,pieces.bk,pieces.br]
+        def[1] = Arra(w).fill(pieces.bp);
+        def[def.length-2] = [pieces.wr,pieces.wk,pieces.wb,pieces.wq,pieces.wk,pieces.wb,pieces.wk,pieces.wr]
+        def[def.length-1] = Arra(w).fill(pieces.wp);
         setBoard(def)
     }
 };
