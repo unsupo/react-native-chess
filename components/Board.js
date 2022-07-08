@@ -27,7 +27,9 @@ const Board: () => {
     };
 
     return (
-        <square for
+        {
+
+        }
     );
 };
 
