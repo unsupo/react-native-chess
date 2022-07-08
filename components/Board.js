@@ -6,7 +6,7 @@
  * @flow strict-local
  */
 
-import React, {useEffect, useState} from 'react';
+import React, {useCallback, useEffect, useState} from 'react';
 import {
     Dimensions,
     StyleSheet, View,
@@ -35,7 +35,7 @@ const Board = () => {
     const [board, setBoard] = useState(Array(w).fill(0).map(row=>Array(h).fill(0)));
 
     useEffect(()=>{
-        newBoard()
+        useCallback(()=>newBoard(),[])
     });
 
     return (
