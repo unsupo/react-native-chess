@@ -8,7 +8,7 @@
 
 import React from 'react';
 import {
-    StyleSheet,
+    StyleSheet, View,
 } from 'react-native';
 import Square from "./Square";
 
@@ -16,11 +16,11 @@ const Board = () => {
     const w = 8; const h = 8;
 
     return (
-        <div style={styles}>
+        <View style={styles}>
             {[...Array(w)].map((x,i)=>
                 <Square />
             )}
-        </div>
+        </View>
     );
 };
 
