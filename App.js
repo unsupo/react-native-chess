@@ -42,7 +42,7 @@ const App: () => Node = () => {
                     style={{
                         backgroundColor: isDarkMode ? Colors.black : Colors.white,
                     }}>
-                    <Board/>
+                    <Board style={styles.board}/>
                 </View>
             </ScrollView>
         </SafeAreaView>
@@ -50,6 +50,10 @@ const App: () => Node = () => {
 };
 
 const styles = StyleSheet.create({
+    board:{
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
     sectionContainer: {
         marginTop: 32,
         paddingHorizontal: 24,
