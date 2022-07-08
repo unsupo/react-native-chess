@@ -24,7 +24,7 @@ const Board: () => {
 
     return (
         <div style={styles}>
-            for (var i=0; i < w; i++)
+            for (var i=0; i < w; i++){
                 <Square />
             }
         </div>
