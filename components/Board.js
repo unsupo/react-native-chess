@@ -19,6 +19,7 @@ import {
 } from 'react-native';
 
 const Board: () => {
+    const w = h = 8;
     const isDarkMode = useColorScheme() === 'dark';
 
     const backgroundStyle = {
@@ -26,19 +27,7 @@ const Board: () => {
     };
 
     return (
-        <SafeAreaView style={backgroundStyle}>
-            <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-            <ScrollView
-                contentInsetAdjustmentBehavior="automatic"
-                style={backgroundStyle}>
-                <View
-                    style={{
-                        backgroundColor: isDarkMode ? Colors.black : Colors.white,
-                    }}>
-                    <TurnIndicator />
-                </View>
-            </ScrollView>
-        </SafeAreaView>
+        <square for
     );
 };
 
