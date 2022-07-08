@@ -8,12 +8,15 @@
 
 import React from 'react';
 import {
+    Dimensions,
     StyleSheet, View,
 } from 'react-native';
 import Square from "./Square";
 
 const Board = () => {
     const w = 2; const h = 8;
+    const windowWidth = Dimensions.get('window').width;
+    const windowHeight = Dimensions.get('window').height;
 
     return (
         <View style={styles}>
