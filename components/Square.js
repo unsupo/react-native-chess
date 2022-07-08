@@ -15,11 +15,12 @@ import {
 
 const Square = () => {
     return (
-        <View style={styles}></View>
+        <View style={styles}/>
     );
 };
 
 const styles = StyleSheet.create({
+    backgroundColor: blue,
     sectionContainer: {
         marginTop: 32,
         paddingHorizontal: 24,
