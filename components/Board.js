@@ -20,9 +20,9 @@ const Board = () => {
     const size = Math.min(windowWidth, windowHeight);
 
     return (
-        <View style={styles}>
+        <View style={styles().board}>
             {[...Array(w)].map((x,i)=>
-                <View style={flexDirection: i % 2 === 0 ? 'row': 'column'}>
+                <View style={styles(i % 2 === 0 ? 'row': 'column').row}>
                 [...Array(w)].map((y,j)=>
                     <Square key={i+','+j} size={size / w} color={i % 2 === 0 ? '#00BCD4' : '#132c2d'}/>
                 )
@@ -32,9 +32,14 @@ const Board = () => {
     );
 };
 
-const styles = StyleSheet.create({
-    flex: 1,
-    backgroundColor: '#F5FCFF',
+const styles = (props) => StyleSheet.create({
+    board: {
+        flex: 1,
+        backgroundColor: '#F5FCFF',
+    },
+    row: {
+        flexDirection:
+    }
 });
 
 export default Board;
