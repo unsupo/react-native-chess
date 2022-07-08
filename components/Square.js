@@ -20,7 +20,7 @@ const Square = () => {
 };
 
 const styles = StyleSheet.create({
-    backgroundColor: 'blue',
+    background: 'blue',
 });
 
 export default Square;
