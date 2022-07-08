@@ -74,6 +74,7 @@ const Board = () => {
 
 /*
 All pieces except for pawn can be inverted and rotated 90 deg
+knight can but also needs more rotations
 so rook:
 right 7 ----------
 inverted left 7
@@ -88,7 +89,9 @@ top left
 
 knight
 up 2 right 1
-down 2 left 1
+inverted down 2 left 1
+rotated 90 deg right 2 down 1
+inverted rotated 90 deg is left 2 up 1
 
  */
 
