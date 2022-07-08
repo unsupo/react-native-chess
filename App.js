@@ -7,7 +7,7 @@
  */
 
 import React from 'react';
-import type {Node} from 'react';
+import  {Node} from 'react';
 import {
   SafeAreaView,
   ScrollView,
@@ -20,11 +20,12 @@ import {
 
 import {
   Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
+
+
+
+
 } from 'react-native/Libraries/NewAppScreen';
+import Board from "./components/Board";
 
 const Section = ({children, title}): Node => {
   const isDarkMode = useColorScheme() === 'dark';
