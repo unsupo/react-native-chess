@@ -33,9 +33,6 @@ const Board = () => {
 };
 
 const styles = StyleSheet.create({
-    board: {
-        backgroundColor: '#F5FCFF',
-    },
     row: {
         flexDirection: "row",
     }
