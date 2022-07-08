@@ -24,9 +24,9 @@ const Board = () => {
 
     return (
         <div style={styles}>
-            for (var i=0; i < w; i++){
+            {[...Array(w)].map((x,i)=>
                 <Square />
-            }
+            )}
         </div>
     );
 };
