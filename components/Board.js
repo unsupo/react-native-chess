@@ -27,7 +27,7 @@ const pieces = {
     wq: 10,
     wr: 11,
 }
-const defaultBoard = (w) => {
+const defaultBoard = (w,h) => {
     const def = Array(w).fill(-1).map(row=>Array(h).fill(-1));
     def[0] = [pieces.br,pieces.bk,pieces.bb,pieces.bq,pieces.bk,pieces.bb,pieces.bk,pieces.br]
     def[1] = Array(w).fill(pieces.bp);
@@ -42,7 +42,7 @@ const Board = () => {
     const size = Math.min(windowWidth, windowHeight);
     const [board, setBoard] = useState(Array(w).fill(0).map(row=>Array(h).fill(0)));
 
-    useEffect(()=>setBoard(defaultBoard(w)),[]);
+    useEffect(()=>setBoard(defaultBoard(w, h)),[]);
 
     return (
         <View style={{flexDirection: 'row', width: size, height: size, backgroundColor: '#8d00d4'}}>
