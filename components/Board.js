@@ -73,30 +73,11 @@ const Board = () => {
 };
 
 /*
-All pieces except for pawn can be inverted and rotated 90 deg
-knight can but also needs more rotations
-so rook:
-right 7 ----------
-inverted left 7
-rotated 90 deg down 7
-inverted and rotated 90 deg up 7
-
-bishop
-top right diag 7
-bottom left diag 7
-bottom right
-top left
-
-knight
-up 2 right 1
-inverted down 2 left 1
-rotated 90 deg right 2 down 1
-inverted rotated 90 deg is left 2 up 1
-also need mirror of above 4
-up 2 left 1
-down 2 right 1
-right 2 up 1
-left 2 down 1
+Things that can be done
+bitboard
+fen
+calculate all moves at all times?
+transposition tables
 
  */
 
