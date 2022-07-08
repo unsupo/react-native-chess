@@ -92,7 +92,9 @@ up 2 right 1
 inverted down 2 left 1
 rotated 90 deg right 2 down 1
 inverted rotated 90 deg is left 2 up 1
-also need mirror of above 2
+also need mirror of above 4
+up 2 left 1
+down 2 right 1
 right 2 up 1
 left 2 down 1
 
