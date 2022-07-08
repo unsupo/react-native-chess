@@ -79,7 +79,7 @@ fen
 calculate all moves at all times?
 transposition tables
 iterative deepening
-
+zobrist keys
  */
 
 const styles = (props) => StyleSheet.create({
