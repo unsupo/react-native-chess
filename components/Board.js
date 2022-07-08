@@ -20,14 +20,14 @@ const Board = () => {
     const size = Math.min(windowWidth, windowHeight);
 
     return (
-        <View style={{width: size, height: size}}>
-            {[...Array(w)].map((x,i)=>
-                <View style={styles.row} key={i}>
-                    {[...Array(h)].map((y,j)=>
-                        <Square v={i+','+j} key={i+','+j} size={size / w} color={(i+j) % 2 === 0 ? '#00BCD4' : '#132c2d'}/>
-                    )}
-                </View>
-            )}
+        <View style={{width: size, height: size, backgroundColor: '#00BCD4'}}>
+            {/*{[...Array(w)].map((x,i)=>*/}
+            {/*    <View style={styles.row} key={i}>*/}
+            {/*        {[...Array(h)].map((y,j)=>*/}
+            {/*            <Square v={i+','+j} key={i+','+j} size={size / w} color={(i+j) % 2 === 0 ? '#00BCD4' : '#132c2d'}/>*/}
+            {/*        )}*/}
+            {/*    </View>*/}
+            {/*)}*/}
         </View>
     );
 };
