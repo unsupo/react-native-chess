@@ -20,7 +20,7 @@ const Board = () => {
     const size = Math.min(windowWidth, windowHeight);
 
     return (
-        <View style={styles.board}>
+        <View style={{width: size, height: size}}>
             {[...Array(w)].map((x,i)=>
                 <View style={styles.row} key={i}>
                     {[...Array(h)].map((y,j)=>
@@ -32,11 +32,10 @@ const Board = () => {
     );
 };
 
-const styles = StyleSheet.create({
+const styles = (props) => StyleSheet.create({
     row: {
         flexDirection: "row",
     },
-    board: {}
 });
 
 export default Board;
