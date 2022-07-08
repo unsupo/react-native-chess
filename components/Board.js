@@ -14,7 +14,7 @@ import {
 } from 'react-native';
 import Square from "./Square";
 
-const Board: () => {
+const Board = () => {
     const w = 8; const h = 8;
     const isDarkMode = useColorScheme() === 'dark';
 
@@ -24,9 +24,9 @@ const Board: () => {
 
     return (
         <div style={styles}>
-            for (var i=0; i < w; i++){
+            {for (var i=0; i < w; i++){
                 <Square />
-            }
+            }}
         </div>
     );
 };
