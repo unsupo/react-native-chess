@@ -8,7 +8,7 @@
 
 import React from 'react';
 import {
-    StyleSheet,
+    StyleSheet, View,
 
 
 } from 'react-native';
