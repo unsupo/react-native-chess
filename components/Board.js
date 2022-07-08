@@ -22,7 +22,7 @@ const Board = () => {
     return (
         <View style={styles}>
             {[...Array(w)].map((x,i)=>
-                <Square key={i+','+j} size={size / w} color={i % 2 === 0 ? '#00BCD4' : '#132c2d'}/>
+                <Square key={i} size={size / w} color={i % 2 === 0 ? '#00BCD4' : '#132c2d'}/>
             )}
         </View>
     );
@@ -30,8 +30,8 @@ const Board = () => {
 
 const styles = StyleSheet.create({
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: 'left',
+    alignItems: 'left',
     backgroundColor: '#F5FCFF',
 });
 
