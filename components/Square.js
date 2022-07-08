@@ -15,29 +15,25 @@ import {
 } from 'react-native';
 
 const pieces = [
-    "bb.png",
-    "bk.png",
-    "bn.png",
-    "bp.png",
-    "bq.png",
-    "br.png",
-    "wb.png",
-    "wk.png",
-    "wn.png",
-    "wp.png",
-    "wq.png",
-    "wr.png",
+    require('../pieces/bb.png'),
+    require('../pieces/bk.png'),
+    require('../pieces/bn.png'),
+    require('../pieces/bp.png'),
+    require('../pieces/bq.png'),
+    require('../pieces/br.png'),
+    require('../pieces/wb.png'),
+    require('../pieces/wk.png'),
+    require('../pieces/wn.png'),
+    require('../pieces/wp.png'),
+    require('../pieces/wq.png'),
+    require('../pieces/wr.png'),
 ]
 
 {/*{props.piece < 0 || !props.piece ? <View/> :*/}
 {/*<Image source={require('../pieces/' + pieces[props.piece])}/>}</View>*/}
 const Square = (props) => {
-    function getPiece(piece) {
-        return "./pieces/"+pieces[piece];
-    }
-
     return (
-        <View style={styles(props)}><Image source={require(getPiece(pieces[props.piece]))}/>}</View>
+        <View style={styles(props)}><Image source={require(pieces[props.piece])}/>}</View>
     );
 };
 
