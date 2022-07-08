@@ -22,7 +22,7 @@ const Board = () => {
     return (
         <View style={styles.board}>
             {[...Array(w)].map((x,i)=>
-                <View style={styles.row}>
+                <View style={styles.row} key={i}>
                     {[...Array(h)].map((y,j)=>
                         <Square key={i+','+j} size={size / w} color={i+j % 2 === 0 ? '#00BCD4' : '#132c2d'}/>
                     )}
