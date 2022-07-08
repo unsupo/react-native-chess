@@ -30,6 +30,10 @@ const Board = () => {
             )}
         </View>
     );
+
+    newBoard(){
+
+    }
 };
 
 const styles = (props) => StyleSheet.create({
