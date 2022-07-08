@@ -41,8 +41,10 @@ const App: () => Node = () => {
                 <View
                     style={{
                         backgroundColor: isDarkMode ? Colors.black : Colors.white,
+                        justifyContent: 'center',
+                        alignItems: 'center'
                     }}>
-                    <Board style={styles.board}/>
+                    <Board/>
                 </View>
             </ScrollView>
         </SafeAreaView>
