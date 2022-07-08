@@ -28,7 +28,13 @@ const pieces = {
     wr: 11,
 }
 const defaultBoard = (w,h) => {
-    const def = Array(w).fill(-1).map(row=>Array(h).fill(-1));
+    const def = [];//Array(w).fill(-1).map(row=>Array(h).fill(-1));
+    for (let i = 0; i < w; i++) {
+        def.push([])
+        for (let j = 0; j < h; j++) {
+            def[i].push(-1);
+        }
+    }
     def[0] = [pieces.br,pieces.bk,pieces.bb,pieces.bq,pieces.bk,pieces.bb,pieces.bk,pieces.br]
     def[1] = Array(w).fill(pieces.bp);
     def[def.length-2] = [pieces.wr,pieces.wk,pieces.wb,pieces.wq,pieces.wk,pieces.wb,pieces.wk,pieces.wr]
