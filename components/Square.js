@@ -15,7 +15,7 @@ import {
 
 const Square = (props) => {
     return (
-        <View style={styles(props)}/>
+        <View style={styles(props)}>{props.key}</View>
     );
 };
 
