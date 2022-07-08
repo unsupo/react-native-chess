@@ -35,9 +35,9 @@ const defaultBoard = (w, h) => {
             def[i].push(-1);
         }
     }
-    def[0] = [pieces.br, pieces.bk, pieces.bb, pieces.bq, pieces.bk, pieces.bb, pieces.bk, pieces.br]
+    def[0] = [pieces.br, pieces.bn, pieces.bb, pieces.bq, pieces.bk, pieces.bb, pieces.bn, pieces.br]
     def[1] = Array(w).fill(pieces.bp);
-    def[def.length - 1] = [pieces.wr, pieces.wk, pieces.wb, pieces.wq, pieces.wk, pieces.wb, pieces.wk, pieces.wr]
+    def[def.length - 1] = [pieces.wr, pieces.wn, pieces.wb, pieces.wq, pieces.wk, pieces.wb, pieces.wn, pieces.wr]
     def[def.length - 2] = Array(w).fill(pieces.wp);
     return def
 }
@@ -85,6 +85,11 @@ top right diag 7
 bottom left diag 7
 bottom right
 top left
+
+knight
+up 2 right 1
+down 2 left 1
+
  */
 
 const styles = (props) => StyleSheet.create({
