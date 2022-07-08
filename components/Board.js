@@ -72,6 +72,21 @@ const Board = () => {
     }
 };
 
+/*
+All pieces except for pawn can be inverted and rotated 90 deg
+so rook:
+right 7 ----------
+inverted left 7
+rotated 90 deg down 7
+inverted and rotated 90 deg up 7
+
+bishop
+top right diag 7
+bottom left diag 7
+bottom right
+top left
+ */
+
 const styles = (props) => StyleSheet.create({
     row: {
         flexDirection: "row",
