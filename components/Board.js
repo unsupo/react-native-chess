@@ -23,9 +23,9 @@ const Board = () => {
         <View style={styles({flexDirection: ''}).board}>
             {[...Array(w)].map((x,i)=>
                 <View style={styles({flexDirection: i % 2 === 0 ? 'row': 'column'}).row}>
-                [...Array(w)].map((y,j)=>
-                    <Square key={i+','+j} size={size / w} color={i % 2 === 0 ? '#00BCD4' : '#132c2d'}/>
-                )
+                    [...Array(w)].map((y,j)=>
+                        <Square key={i+','+j} size={size / w} color={i % 2 === 0 ? '#00BCD4' : '#132c2d'}/>
+                    )
                 </View>
             )}
         </View>
