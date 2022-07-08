@@ -31,7 +31,10 @@ const Board = () => {
         </View>
     );
 
-    newBoard(){
+    /**
+     * This method sets up a new board 
+     */
+    const newBoard = () => {
 
     }
 };
