@@ -36,11 +36,7 @@ const styles = StyleSheet.create({
     row: {
         flexDirection: "row",
     },
-    board: {
-        flex:1,
-        alignItems:'center',
-        justifyContent:'center'
-    }
+    board: {}
 });
 
 export default Board;

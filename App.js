@@ -30,8 +30,6 @@ const App: () => Node = () => {
 
     const backgroundStyle = {
         backgroundColor: isDarkMode ? Colors.darker : Colors.darker,
-        justifyContent: 'center',
-        alignItems: 'center'
     };
 
     return (
