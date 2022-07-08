@@ -20,8 +20,8 @@ const Square = (props) => {
 };
 
 const styles = (props) => StyleSheet.create({
-    width: 120,
-    height: 120,
+    width: props.size,
+    height: props.size,
     backgroundColor: '#00BCD4'
 });
 
