@@ -34,7 +34,7 @@ const Board = () => {
     const size = Math.min(windowWidth, windowHeight);
     const [board, setBoard] = useState(Array(w).fill(0).map(row=>Array(h).fill(0)));
 
-    useConstructor(()=>{
+    useEffect(()=>{
         newBoard()
     });
 
