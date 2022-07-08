@@ -34,7 +34,7 @@ const pieces = [
 const Square = (props) => {
 
     return (
-        <View style={styles(props)}><Text>{'../pieces/' + pieces[props.piece]}</Text></View>
+        <View style={styles(props)}><Image source={require('../pieces/' + pieces[props.piece])}/>}</View>
     );
 };
 
