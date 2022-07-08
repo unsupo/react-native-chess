@@ -8,14 +8,14 @@
 
 import React from 'react';
 import {
-    StyleSheet, View,
+    StyleSheet, Text, View,
 
 
 } from 'react-native';
 
 const Square = (props) => {
     return (
-        <View style={styles(props)}>{props.key}</View>
+        <View style={styles(props)}><Text>{props.key}</Text></View>
     );
 };
 
