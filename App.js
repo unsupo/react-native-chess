@@ -27,13 +27,18 @@ import Board from "./components/Board";
 
 const App: () => Node = () => {
     return (
-        <SafeAreaView style={{width: '100%', height: '100%', backgroundColor: '#d0849b'}}>
+        <SafeAreaView style={styles.app}>
             <Board/>
         </SafeAreaView>
     );
 };
 
 const styles = StyleSheet.create({
+    app: {
+        backgroundColor: '#33111e',
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
     board:{
         justifyContent: 'center',
         alignItems: 'center'

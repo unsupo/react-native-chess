@@ -20,7 +20,7 @@ const Board = () => {
     const size = Math.min(windowWidth, windowHeight);
 
     return (
-        <View style={{flexDirection: 'row', width: size, height: size, backgroundColor: '#00BCD4'}}>
+        <View style={{flexDirection: 'row', width: size, height: size, backgroundColor: '#8d00d4'}}>
             {[...Array(w)].map((x,i)=>
                 <View style={styles.row} key={i}>
                     {[...Array(h)].map((y,j)=>
