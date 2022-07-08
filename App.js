@@ -33,7 +33,7 @@ const App: () => Node = () => {
     };
 
     return (
-        <SafeAreaView style={backgroundStyle}>
+        <SafeAreaView style={{width: '100%', height: '100%', backgroundColor: '#d0849b'}}>
             <Board/>
         </SafeAreaView>
     );
