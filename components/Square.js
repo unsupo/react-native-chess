@@ -20,7 +20,7 @@ const Square = () => {
 };
 
 const styles = StyleSheet.create({
-    backgroundColor: blue,
+    backgroundColor: 'blue',
     sectionContainer: {
         marginTop: 32,
         paddingHorizontal: 24,
