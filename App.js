@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
     app: {
         width: '100%',
         height: '100%',
-        backgroundColor: '#33111e',
+        backgroundColor: '#0d1217',
         justifyContent: 'center',
         alignItems: 'center'
     },
