@@ -27,8 +27,8 @@ const Board: () => {
     };
 
     return (
-        {for i in range
-
+        for (var i=0; i < objects.length; i++)
+            <Square />
         }
     );
 };
@@ -52,4 +52,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default App;
+export default Board;
