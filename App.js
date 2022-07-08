@@ -26,12 +26,6 @@ import {
 import Board from "./components/Board";
 
 const App: () => Node = () => {
-    const isDarkMode = useColorScheme() === 'dark';
-
-    const backgroundStyle = {
-        backgroundColor: '#d0849b',
-    };
-
     return (
         <SafeAreaView style={{width: '100%', height: '100%', backgroundColor: '#d0849b'}}>
             <Board/>
