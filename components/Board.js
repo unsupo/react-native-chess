@@ -37,8 +37,9 @@ const styles = StyleSheet.create({
         flexDirection: "row",
     },
     board: {
-        justifyContent: 'center',
-        alignItems: 'center'
+        flex:1,
+        alignItems:'center',
+        justifyContent:'center'
     }
 });
 
