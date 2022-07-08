@@ -14,7 +14,7 @@ import {
 import Square from "./Square";
 
 const Board = () => {
-    const w = 2; const h = 8;
+    const w = 8; const h = 8;
     const windowWidth = Dimensions.get('window').width;
     const windowHeight = Dimensions.get('window').height;
     const size = Math.min(windowWidth, windowHeight);
