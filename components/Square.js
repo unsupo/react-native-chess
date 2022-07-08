@@ -22,7 +22,7 @@ const Square = (props) => {
 const styles = (props) => StyleSheet.create({
     width: props.size,
     height: props.size,
-    backgroundColor: '#00BCD4'
+    backgroundColor: props.color,
 });
 
 export default Square;
