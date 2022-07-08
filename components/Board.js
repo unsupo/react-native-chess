@@ -27,7 +27,7 @@ const pieces = {
     wq: 10,
     wr: 11,
 }
-const defaultBoard = (w,h) => {
+const defaultBoard = (w, h) => {
     const def = [];//Array(w).fill(-1).map(row=>Array(h).fill(-1));
     for (let i = 0; i < w; i++) {
         def.push([])
@@ -35,27 +35,29 @@ const defaultBoard = (w,h) => {
             def[i].push(-1);
         }
     }
-    def[0] = [pieces.br,pieces.bk,pieces.bb,pieces.bq,pieces.bk,pieces.bb,pieces.bk,pieces.br]
+    def[0] = [pieces.br, pieces.bk, pieces.bb, pieces.bq, pieces.bk, pieces.bb, pieces.bk, pieces.br]
     def[1] = Array(w).fill(pieces.bp);
-    def[def.length-1] = [pieces.wr,pieces.wk,pieces.wb,pieces.wq,pieces.wk,pieces.wb,pieces.wk,pieces.wr]
-    def[def.length-2] = Array(w).fill(pieces.wp);
+    def[def.length - 1] = [pieces.wr, pieces.wk, pieces.wb, pieces.wq, pieces.wk, pieces.wb, pieces.wk, pieces.wr]
+    def[def.length - 2] = Array(w).fill(pieces.wp);
     return def
 }
 const Board = () => {
-    const w = 8; const h = 8;
+    const w = 8;
+    const h = 8;
     const windowWidth = Dimensions.get('window').width;
     const windowHeight = Dimensions.get('window').height;
     const size = Math.min(windowWidth, windowHeight);
-    const [board, setBoard] = useState(Array(w).fill(0).map(row=>Array(h).fill(0)));
+    const [board, setBoard] = useState(Array(w).fill(0).map(row => Array(h).fill(0)));
 
-    useEffect(()=>setBoard(defaultBoard(w, h)),[]);
+    useEffect(() => setBoard(defaultBoard(w, h)), []);
 
     return (
         <View style={{flexDirection: 'row', width: size, height: size, backgroundColor: '#8d00d4'}}>
-            {[...Array(w)].map((x,i)=>
+            {[...Array(w)].map((x, i) =>
                 <View style={styles.row} key={i}>
-                    {[...Array(h)].map((y,j)=>
-                        <Square v={j+','+i} piece={board[j][i]} key={i+','+j} size={size / w} color={(i+j) % 2 === 0 ? '#d0c1a9' : '#346e37'}/>
+                    {[...Array(h)].map((y, j) =>
+                        <Square piece={board[j][i]} key={i + ',' + j} size={size / w}
+                                color={(i + j) % 2 === 0 ? '#d0c1a9' : '#346e37'}/>
                     )}
                 </View>
             )}
