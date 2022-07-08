@@ -15,7 +15,7 @@ import {
 } from 'react-native';
 
 const pieces = [
-    <Image  source={require('../pieces/bb.png')} />,
+    <Image source={require('../pieces/bb.png')} />,
     <Image source={require('../pieces/bk.png')} />,
     <Image source={require('../pieces/bn.png')} />,
     <Image source={require('../pieces/bp.png')} />,
