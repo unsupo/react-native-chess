@@ -13,7 +13,7 @@ import {
 
 } from 'react-native';
 
-const Square = () => {
+const Square = (props) => {
     return (
         <View style={styles}/>
     );
