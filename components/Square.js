@@ -15,11 +15,11 @@ import {
 
 const Square = (props) => {
     return (
-        <View style={styles}/>
+        <View style={styles(props)}/>
     );
 };
 
-const styles = (props?: any) => StyleSheet.create({
+const styles = (props) => StyleSheet.create({
     width: 120,
     height: 120,
     backgroundColor: '#00BCD4'
