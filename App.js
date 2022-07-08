@@ -28,18 +28,9 @@ import Board from "./components/Board";
 const App: () => Node = () => {
     const isDarkMode = useColorScheme() === 'dark';
 
-    const backgroundStyle = {
-        backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-        justifyContent: 'center',
-        alignItems: 'center'
-    };
-
     return (
         <SafeAreaView style={backgroundStyle}>
             <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'}/>
-            <ScrollView
-                contentInsetAdjustmentBehavior="automatic"
-                style={backgroundStyle}>
                 <View
                     style={{
                         backgroundColor: isDarkMode ? Colors.black : Colors.white,
@@ -48,7 +39,6 @@ const App: () => Node = () => {
                     }}>
                     <Board/>
                 </View>
-            </ScrollView>
         </SafeAreaView>
     );
 };
