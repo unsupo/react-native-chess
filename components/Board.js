@@ -30,8 +30,6 @@ const Board = () => {
 
 const styles = StyleSheet.create({
     flex: 1,
-    justifyContent: 'left',
-    alignItems: 'left',
     backgroundColor: '#F5FCFF',
 });
 
