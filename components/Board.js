@@ -80,6 +80,7 @@ calculate all moves at all times?
 transposition tables
 iterative deepening
 zobrist keys
+https://web.archive.org/web/20071026090003/http://www.brucemo.com/compchess/programming/index.htm
  */
 
 const styles = (props) => StyleSheet.create({
