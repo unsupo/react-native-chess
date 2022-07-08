@@ -18,7 +18,7 @@ const Board = () => {
     return (
         <View style={styles}>
             {[...Array(w)].map((x,i)=>
-                <Square />
+                <Square  />
             )}
         </View>
     );
