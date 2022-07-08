@@ -15,7 +15,7 @@ import {
 } from 'react-native';
 
 const pieces = [
-    <Image source={require('../pieces/bb.png')} />,
+    require('../pieces/bb.png'),
     <Image source={require('../pieces/bk.png')} />,
     <Image source={require('../pieces/bn.png')} />,
     <Image source={require('../pieces/bp.png')} />,
@@ -33,7 +33,7 @@ const pieces = [
 {/*<Image source={require('../pieces/' + pieces[props.piece])}/>}</View>*/}
 const Square = (props) => {
     return (
-        <View style={styles(props)}>{pieces[props.piece]}</View>
+        <View style={styles(props)}><Image source={pieces[props.piece]}/></View>
     );
 };
 
