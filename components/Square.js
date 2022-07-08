@@ -15,7 +15,7 @@ import {
 
 const Square = () => {
     return (
-        <div style={styles}></div>
+        <View style={styles}></View>
     );
 };
 
