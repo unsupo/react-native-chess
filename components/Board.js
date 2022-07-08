@@ -7,16 +7,12 @@
  */
 
 import React from 'react';
-import type {Node} from 'react';
 import {
-    SafeAreaView,
-    ScrollView,
-    StatusBar,
     StyleSheet,
-    Text,
     useColorScheme,
-    View,
+
 } from 'react-native';
+import Square from "./Square";
 
 const Board: () => {
     const w = 8, h = 8;
@@ -27,9 +23,11 @@ const Board: () => {
     };
 
     return (
-        for (var i=0; i < objects.length; i++)
-            <Square />
-        }
+        <div style={styles}>
+            for (var i=0; i < w; i++)
+                <Square />
+            }
+        </div>
     );
 };
 
