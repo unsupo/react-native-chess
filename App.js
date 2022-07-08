@@ -30,19 +30,13 @@ const App: () => Node = () => {
 
     const backgroundStyle = {
         backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
+        justifyContent: 'center',
+        alignItems: 'center'
     };
 
     return (
         <SafeAreaView style={backgroundStyle}>
-            <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'}/>
-                <View
-                    style={{
-                        backgroundColor: isDarkMode ? Colors.black : Colors.white,
-                        justifyContent: 'center',
-                        alignItems: 'center'
-                    }}>
-                    <Board/>
-                </View>
+            <Board/>
         </SafeAreaView>
     );
 };
