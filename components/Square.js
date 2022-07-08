@@ -8,14 +8,31 @@
 
 import React from 'react';
 import {
+    Image,
     StyleSheet, Text, View,
 
 
 } from 'react-native';
 
+const pieces = [
+    "bb.png",
+    "bk.png",
+    "bn.png",
+    "bp.png",
+    "bq.png",
+    "br.png",
+    "wb.png",
+    "wk.png",
+    "wn.png",
+    "wp.png",
+    "wq.png",
+    "wr.png",
+]
+
 const Square = (props) => {
+
     return (
-        <View style={styles(props)} />
+        <View style={styles(props)}>{props.piece < 0 ? <View /> : <Image source={pieces[props.piece]} />}</View>
     );
 };
 
