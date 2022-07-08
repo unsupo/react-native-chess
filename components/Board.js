@@ -22,7 +22,7 @@ const Board = () => {
     return (
         <View style={styles().board}>
             {[...Array(w)].map((x,i)=>
-                <View style={styles(i % 2 === 0 ? 'row': 'column').row}>
+                <View style={styles({flexDirection: i % 2 === 0 ? 'row': 'column'}).row}>
                 [...Array(w)].map((y,j)=>
                     <Square key={i+','+j} size={size / w} color={i % 2 === 0 ? '#00BCD4' : '#132c2d'}/>
                 )
@@ -38,7 +38,7 @@ const styles = (props) => StyleSheet.create({
         backgroundColor: '#F5FCFF',
     },
     row: {
-        flexDirection:
+        flexDirection: props.flexDirection
     }
 });
 
