@@ -36,7 +36,9 @@ const Board = () => {
      * This method sets up a new board in their correct positions
      */
     const newBoard = () => {
-        setBoard()
+        const def = Array(w).fill(0).map(row=>Array(h).fill(0));
+        def[0] = []
+        setBoard(def)
     }
 };
 
