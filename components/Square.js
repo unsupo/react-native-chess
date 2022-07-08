@@ -20,10 +20,9 @@ const Square = () => {
 };
 
 const styles = StyleSheet.create({
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    width: 120,
+    height: 120,
+    backgroundColor: '#00BCD4'
 });
 
 export default Square;

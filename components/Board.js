@@ -13,7 +13,7 @@ import {
 import Square from "./Square";
 
 const Board = () => {
-    const w = 1; const h = 8;
+    const w = 2; const h = 8;
 
     return (
         <View style={styles}>
