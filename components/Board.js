@@ -15,7 +15,7 @@ import {
 import Square from "./Square";
 
 const Board: () => {
-    const w = 8, h = 8;
+    const w = 8; const h = 8;
     const isDarkMode = useColorScheme() === 'dark';
 
     const backgroundStyle = {
