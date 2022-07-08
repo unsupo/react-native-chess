@@ -35,7 +35,7 @@ const Board = () => {
     const [board, setBoard] = useState(Array(w).fill(0).map(row=>Array(h).fill(0)));
 
     useEffect(()=>{
-        useCallback(()=>newBoard(),[])
+        useCallback(()=>newBoard,[])
     });
 
     return (
