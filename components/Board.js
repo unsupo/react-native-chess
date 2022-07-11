@@ -81,14 +81,10 @@ const Board = () => {
                                 const moves = chess.moves({verbose: true, square: convertCord(i, j)});
                                 obj['pressed']=moves[0].from;
                                 obj['to']=[];
-                                obj['from']=[];
-                                moves.forEach(v=>)
-                                console.log(moves);
-                                setPressed({
-                                    pressed: moves[0].from,
-                                    to:[],
-                                    take:[],
-                                })
+                                obj['take']=[];
+                                moves.forEach(v=>v['flags']==='c'?obj['take'].push(v['to']):obj['to'].push(v['to']))
+                                console.log(obj);
+                                setPressed(obj)
                             }}>
                             <Square piece={board[j][i]} key={i + ',' + j} size={size / w}
                                     coord={convertCord(i,j)}
