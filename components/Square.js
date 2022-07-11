@@ -33,7 +33,7 @@ const Square = (props) => {
     return (
         <ImageBackground source={pieces[props.piece]} style={styles(props)}>
             {props.coord[0] === "a" || props.coord[1] === "1" ? <Text>{props.coord}</Text> : ""}
-            <Svg height="100%" width="100%" style={{alignItems: 'center'}}>
+            <Svg height="100%" width="100%">
                 <Circle r="17%" cx="50%" cy="50%" fill="black" fillOpacity=".1"  />
             </Svg>
             {/*<Image style={styles(props)} source={pieces[props.piece]}/>*/}
@@ -44,6 +44,7 @@ const styles = (props) => StyleSheet.create({
     width: props.size,
     height: props.size,
     backgroundColor: props.color,
+     
 });
 
 export default Square;
