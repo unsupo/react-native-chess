@@ -33,7 +33,6 @@ const Square = (props) => {
     return (
         <ImageBackground source={pieces[props.piece]} style={styles(props)}>
             {props.coord[0] === "a" || props.coord[1] === "1" ? <Text>{props.coord}</Text> : ""}
-            <PossibleTakeMove />
             {/*<Image style={styles(props)} source={pieces[props.piece]}/>*/}
         </ImageBackground>
     );
@@ -52,7 +51,7 @@ const PossibleTakeMove = () => {
             <Defs>
                 <Mask id="hole">
                     <Rect width="100%" height="100%" fill="white"/>
-                    <Circle r="5%" cx="50%" cy="50%" fill="black"/>
+                    <Circle r="40%" cx="50%" cy="50%" fill="black"/>
                 </Mask>
             </Defs>
             <Circle id="donut" r="50%" cx="50%" cy="50%" fill="black" fillOpacity=".1" mask="url(#hole)" />
