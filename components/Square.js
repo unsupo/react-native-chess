@@ -32,7 +32,7 @@ const pieces = [
 const Square = (props) => {
     return (
         <ImageBackground source={pieces[props.piece]} style={styles(props)}>
-            {props.text ? <Text>{props.text}</Text> : ""}
+            {props.coord[0] === "a" || props.coord[0] === 1 ? <Text>{props.coord}</Text> : ""}
             {/*<Image style={styles(props)} source={pieces[props.piece]}/>*/}
         </ImageBackground>
     );
