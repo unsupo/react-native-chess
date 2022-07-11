@@ -58,8 +58,8 @@ const convertCord = (x,y) => {
     return alphaCord[x]+(8-y);
 }
 
+const chess = new Chess();
 const Board = () => {
-    const chess = new Chess()
     // 12 boards 1 for each type of piece 64bit integer
     const w = 8;
     const h = 8;
@@ -77,6 +77,7 @@ const Board = () => {
                     {[...Array(h)].map((y, j) =>
                         <TouchableHighlight key={i + ',' + j+ "touch"}
                             onPress={()=> {
+                                console.log(chess.turn());
                                 const coords = convertCord(i, j);
                                 if(pressed && (pressed['to'] || pressed['take']) &&
                                     pressed['to'].concat(pressed['take']).indexOf(coords) >= 0) {
