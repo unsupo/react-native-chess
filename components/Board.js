@@ -66,13 +66,6 @@ const Board = () => {
             )}
         </View>
     );
-
-    /**
-     * This method sets up a new board in their correct positions
-     */
-    const newBoard = () => {
-        setBoard(defaultBoard());
-    }
 };
 
 /*
