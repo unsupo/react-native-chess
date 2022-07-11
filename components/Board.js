@@ -77,7 +77,7 @@ const Board = () => {
                         <TouchableHighlight key={i + ',' + j+ "touch"}
                             onPress={()=>console.log(chess.moves({square: convertCord(i,j)}))}>
                             <Square piece={board[j][i]} key={i + ',' + j} size={size / w}
-                                    text={i===0 ? 8-j : j === 0 ? alphaCord[i] : "" }
+                                    text={i===0 ? 8-j : j === h-1 ? alphaCord[i] : "" }
                                     color={(i + j) % 2 === 0 ? '#d0c1a9' : '#346e37'}/>
                         </TouchableHighlight>
                     )}
