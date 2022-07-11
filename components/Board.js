@@ -93,7 +93,19 @@ const Board = () => {
                                 obj['from']=moves[0].from;
                                 obj['to']=[];
                                 obj['take']=[];
-                                moves.forEach(v=>v['flags']==='c'||v['flags']==='cp'?obj['take'].push(v['to']):obj['to'].push(v['to']))
+                                obj['promotion']=[]
+                                moves.forEach(v=> {
+                                        switch (v['flags']) {
+                                            case 'cp':
+                                                obj['promotion'].push(v['to']);
+                                            case 'c':
+                                                obj['take'].push(v['to']);
+                                                break
+                                            default:
+                                                obj['to'].push(v['to']);
+                                        }
+                                    }
+                                )
                                 console.log(obj)
                                 console.log(moves);
                                 console.log(chess.fen())
