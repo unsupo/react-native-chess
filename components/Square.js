@@ -8,6 +8,7 @@
 
 import React from 'react';
 import {
+    Button,
     Image,
     StyleSheet, Text, View,
 
@@ -31,7 +32,7 @@ const pieces = [
 
 const Square = (props) => {
     return (
-        <View style={styles(props)}><Image style={styles(props)} source={pieces[props.piece]}/></View>
+        <Button style={styles(props)}><Image style={styles(props)} source={pieces[props.piece]}/></Button>
     );
 };
 
