@@ -79,8 +79,8 @@ const Board = () => {
                             onPress={()=> {
                                 const obj = {};
                                 const moves = chess.moves({verbose: true, square: convertCord(i, j)});
-                                if(!moves)
-                                    setPressed({})
+                                if(!moves || !moves[0])
+                                    return setPressed({})
                                 obj['from']=moves[0].from;
                                 obj['to']=[];
                                 obj['take']=[];
