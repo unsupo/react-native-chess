@@ -1,5 +1,5 @@
 function shift(number, shift) {
-    return number * Math.pow(2, shift);
+    return Math.floor(number * Math.pow(2, shift));
 }
 const BIT_INIT_POSITIONS = {
     "KING_W" : 1 << 3,
