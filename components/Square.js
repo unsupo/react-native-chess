@@ -50,7 +50,7 @@ const PossibleTakeMove = () => {
     return (
         <Svg height="100%" width="100%" style={{position: 'absolute',}}>
             <Defs>
-                <Mask id={"hole"}>
+                <Mask id="hole">
                     <Rect width="100%" height="100%" fill="white"/>
                     <Circle r="50" cx="100" cy="100" fill="black"/>
                 </Mask>
