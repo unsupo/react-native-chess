@@ -82,7 +82,7 @@ const Board = () => {
                                 if(pressed && (pressed['to'] || pressed['take']) &&
                                     pressed['to'].concat(pressed['take']).indexOf(coords) >= 0) {
                                     chess.move({from: pressed.from, to: coords});
-                                    console.log(chess.fen())
+                                    console.log({from: pressed.from, to: coords})
                                     setBoard(convert(chess.board()));
                                     return setPressed({});
                                 }
