@@ -15,18 +15,18 @@ import {
 } from 'react-native';
 
 const pieces = [
-    require('../pieces/bb.png'),
-    require('../pieces/bk.png'),
-    require('../pieces/bn.png'),
-    require('../pieces/bp.png'),
-    require('../pieces/bq.png'),
-    require('../pieces/br.png'),
-    require('../pieces/wb.png'),
-    require('../pieces/wk.png'),
-    require('../pieces/wn.png'),
-    require('../pieces/wp.png'),
-    require('../pieces/wq.png'),
-    require('../pieces/wr.png'),
+    require('../resources/pieces/bb.png'),
+    require('../resources/pieces/bk.png'),
+    require('../resources/pieces/bn.png'),
+    require('../resources/pieces/bp.png'),
+    require('../resources/pieces/bq.png'),
+    require('../resources/pieces/br.png'),
+    require('../resources/pieces/wb.png'),
+    require('../resources/pieces/wk.png'),
+    require('../resources/pieces/wn.png'),
+    require('../resources/pieces/wp.png'),
+    require('../resources/pieces/wq.png'),
+    require('../resources/pieces/wr.png'),
 ]
 
 const Square = (props) => {
