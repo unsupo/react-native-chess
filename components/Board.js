@@ -12,6 +12,7 @@ import {
     StyleSheet, View,
 } from 'react-native';
 import Square from "./Square";
+import {Chess} from "chess.js";
 
 const pieces = {
     bb: 0,
@@ -42,6 +43,7 @@ const defaultBoard = (w, h) => {
     return def
 }
 const Board = () => {
+    const chess = new Chess()
     // 12 boards 1 for each type of piece 64bit integer
     const w = 8;
     const h = 8;
