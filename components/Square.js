@@ -49,6 +49,7 @@ const SvgCircle = (props) => {
                     />
                 </Mask>
             </Defs>
+            <Rect height="100%" width="100%" fill="rgba(0, 0, 0, 0.8)" mask="url(#mask)" fill-opacity="0" />
         </Svg>
     );
 }
