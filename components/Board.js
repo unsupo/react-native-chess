@@ -9,7 +9,7 @@
 import React, {useCallback, useEffect, useState} from 'react';
 import {
     Dimensions,
-    StyleSheet, View,
+    StyleSheet, TouchableHighlight, View,
 } from 'react-native';
 import Square from "./Square";
 import {Chess} from "chess.js";
@@ -70,9 +70,11 @@ const Board = () => {
             {[...Array(w)].map((x, i) =>
                 <View style={styles.row} key={i}>
                     {[...Array(h)].map((y, j) =>
-                        <Square piece={board[j][i]} key={i + ',' + j} size={size / w}
-                                color={(i + j) % 2 === 0 ? '#d0c1a9' : '#346e37'}
-                                onPress={()=>console.log(i+","+j)}/>
+                        <TouchableHighlight
+                            onPress={()=>console.log(i+","+j)}>
+                            <Square piece={board[j][i]} key={i + ',' + j} size={size / w}
+                                    color={(i + j) % 2 === 0 ? '#d0c1a9' : '#346e37'}/>
+                        </TouchableHighlight>
                     )}
                 </View>
             )}
