@@ -72,7 +72,7 @@ const Board = () => {
                     {[...Array(h)].map((y, j) =>
                         <Square piece={board[j][i]} key={i + ',' + j} size={size / w}
                                 color={(i + j) % 2 === 0 ? '#d0c1a9' : '#346e37'}
-                                onPress={}/>
+                                onPress={()=>console.log(i+","+j)}/>
                     )}
                 </View>
             )}
