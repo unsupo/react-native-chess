@@ -55,7 +55,7 @@ const convert = (board) => {
 }
 
 const Board = () => {
-    const chess = new Chess('r1k4r/p2nb1p1/2b4p/1p1n1p2/2PP4/3Q1NB1/1P3PPP/R5K1 b - c3 0 19')
+    const chess = new Chess()
     // 12 boards 1 for each type of piece 64bit integer
     const w = 8;
     const h = 8;
