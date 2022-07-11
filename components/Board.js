@@ -79,7 +79,9 @@ const Board = () => {
                             onPress={()=> {
                                 const moves = chess.moves({verbose: true, square: convertCord(i, j)});
                                 setPressed({
-                                    pressed:
+                                    pressed: moves[0].from,
+                                    to:[],
+                                    take:[],
                                 })
                             }}>
                             <Square piece={board[j][i]} key={i + ',' + j} size={size / w}
