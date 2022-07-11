@@ -44,7 +44,13 @@ const defaultBoard = (w, h) => {
 }
 const convert = (board) => {
     const nBoard = [];
-    board.forEach(v=>)
+    board.forEach((row, i) => {
+        const v = []
+        row.forEach((col, j) => {
+            v.push(col[])
+        })
+        nBoard.push(v);
+    });
     return nBoard;
 }
 
