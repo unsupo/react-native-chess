@@ -42,6 +42,12 @@ const styles = (props) => StyleSheet.create({
     width: props.size,
     height: props.size,
     backgroundColor: props.color,
+    circle: {
+        width: props.size/4,
+        height: props.size/4,
+        background: 'grey',
+        borderRadius: '50%',
+    },
 });
 
 export default Square;
