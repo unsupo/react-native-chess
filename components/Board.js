@@ -78,6 +78,7 @@ const Board = () => {
                         <TouchableHighlight key={i + ',' + j+ "touch"}
                             onPress={()=> {
                                 const moves = chess.moves({verbose: true, square: convertCord(i, j)});
+                                console.log(moves);
                                 setPressed({
                                     pressed: moves[0].from,
                                     to:[],
