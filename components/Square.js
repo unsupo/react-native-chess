@@ -34,7 +34,7 @@ const Square = (props) => {
         <ImageBackground source={pieces[props.piece]} style={styles(props)}>
             {props.coord[0] === "a" || props.coord[1] === "1" ? <Text>{props.coord}</Text> : ""}
             <Svg height="100%" width="100%">
-                <Circle r="20%" cx="50%" cy="50%" fill="grey" fill-opacity="10"  />
+                <Circle r="20%" cx="50%" cy="50%" fill="grey" fill-opacity="0"  />
             </Svg>
             {/*<Image style={styles(props)} source={pieces[props.piece]}/>*/}
         </ImageBackground>
