@@ -71,7 +71,7 @@ const Board = () => {
                 <View style={styles.row} key={i}>
                     {[...Array(h)].map((y, j) =>
                         <TouchableHighlight key={i + ',' + j+ "touch"}
-                            onPress={()=>console.log(i+","+j)}>
+                            onPress={()=>console.log(chess.moves())}>
                             <Square piece={board[j][i]} key={i + ',' + j} size={size / w}
                                     color={(i + j) % 2 === 0 ? '#d0c1a9' : '#346e37'}/>
                         </TouchableHighlight>
