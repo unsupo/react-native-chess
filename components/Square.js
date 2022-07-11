@@ -48,9 +48,14 @@ const PossibleMove = () => {
 }
 const PossibleTakeMove = () => {
     return (
-        <Svg height="100%" width="100%" style={{
-            position: 'absolute',}}>
-            <Circle r="17%" cx="50%" cy="50%" fill="black" fillOpacity=".1"  />
+        <Svg height="100%" width="100%" style={{position: 'absolute',}}>
+            <Defs>
+                <Mask id={"hole"}>
+                    <Rect width="100%" height="100%" fill="white"/>
+                    <Circle r="50" cx="100" cy="100" fill="black"/>
+                </Mask>
+            </Defs>
+            <Circle id="donut" r="100" cx="100" cy="100" mask="url(#hole)" />
         </Svg>
     )
 }
