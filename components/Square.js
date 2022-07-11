@@ -33,12 +33,12 @@ const Square = (props) => {
     return (
         <ImageBackground source={pieces[props.piece]} style={styles(props)}>
             {props.coord[0] === "a" || props.coord[1] === "1" ? <Text>{props.coord}</Text> : ""}
-            
+            <PossibleTakeMove />
             {/*<Image style={styles(props)} source={pieces[props.piece]}/>*/}
         </ImageBackground>
     );
 };
-const possibleMove = () => {
+const PossibleMove = () => {
     return (
         <Svg height="100%" width="100%" style={{
             position: 'absolute',}}>
@@ -46,7 +46,7 @@ const possibleMove = () => {
         </Svg>
     )
 }
-const possibleTakeMove = () => {
+const PossibleTakeMove = () => {
     return (
         <Svg height="100%" width="100%" style={{
             position: 'absolute',}}>
