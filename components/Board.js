@@ -79,8 +79,10 @@ const Board = () => {
                             onPress={()=> {
                                 const coords = convertCord(i, j);
                                 if(pressed && (pressed['to'] || pressed['take']) &&
-                                    pressed['to'].concat(pressed['take']).indexOf(coords) >= 0)
-                                    return chess.move({from: pressed.from, to: coords});
+                                    pressed['to'].concat(pressed['take']).indexOf(coords) >= 0) {
+                                    chess.move({from: pressed.from, to: coords});
+                                    return setBoard(convert(chess.board));
+                                }
                                 const obj = {};
                                 const moves = chess.moves({verbose: true, square: coords});
                                 if(!moves || !moves[0])
