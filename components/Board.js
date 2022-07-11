@@ -78,7 +78,9 @@ const Board = () => {
                         <TouchableHighlight key={i + ',' + j+ "touch"}
                             onPress={()=> {
                                 const coords = convertCord(i, j);
-                                if(pressed && (pressed['to'] || pressed['take']) && pressed['to'].push(...pressed['take']) coords)
+                                if(pressed && (pressed['to'] || pressed['take']) &&
+                                    pressed['to'].concat(pressed['take']).indexOf(coords) >= 0)
+                                    return chess.move()
                                 const obj = {};
                                 const moves = chess.moves({verbose: true, square: coords});
                                 if(!moves || !moves[0])
