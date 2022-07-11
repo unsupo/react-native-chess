@@ -55,7 +55,7 @@ const PossibleTakeMove = () => {
                     <Circle r="50" cx="100" cy="100" fill="black"/>
                 </Mask>
             </Defs>
-            <Circle id="donut" r="100" cx="100" cy="100" mask="url(#hole)" />
+            <Circle id="donut" r="17%" cx="50%" cy="50%" fill="black" fillOpacity=".1" mask="url(#hole)" />
         </Svg>
     )
 }
