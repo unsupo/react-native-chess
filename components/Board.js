@@ -47,7 +47,7 @@ const convert = (board) => {
     board.forEach((row, i) => {
         const v = []
         row.forEach((col, j) => {
-            v.push(col[])
+            v.push(pieces[col['color']+col['type']])
         })
         nBoard.push(v);
     });
@@ -64,7 +64,7 @@ const Board = () => {
     const size = Math.min(windowWidth, windowHeight);
     const [board, setBoard] = useState(Array(w).fill(0).map(row => Array(h).fill(0)));
 
-    useEffect(() => setBoard(defaultBoard(w, h)), []);
+    useEffect(() => setBoard(convert(chess.board())), []);
 
     return (
         <View style={{flexDirection: 'row', width: size, height: size, backgroundColor: '#8d00d4'}}>
