@@ -34,8 +34,8 @@ const Square = (props) => {
         <ImageBackground source={pieces[props.piece]} style={styles(props)}>
             {props.coord[0] === "a" || props.coord[1] === "1" ? <Text>{props.coord}</Text> : ""}
             {props.from === props.coord ? <HighLight /> : ""}
-            {props.to.indexOf(props.coord) >= 0 ? <PossibleMove /> : ""}
-            {props.take.indexOf(props.coord) >= 0 ? <PossibleTakeMove /> : ""}
+            {props.to && props.to.indexOf(props.coord) >= 0 ? <PossibleMove /> : ""}
+            {props.take && props.take.indexOf(props.coord) >= 0 ? <PossibleTakeMove /> : ""}
             {/*<Image style={styles(props)} source={pieces[props.piece]}/>*/}
         </ImageBackground>
     );
