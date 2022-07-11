@@ -83,6 +83,7 @@ const Board = () => {
                                 obj['to']=[];
                                 obj['take']=[];
                                 moves.forEach(v=>v['flags']==='c'?obj['take'].push(v['to']):obj['to'].push(v['to']))
+                                console.log(obj)
                                 setPressed(obj)
                             }}>
                             <Square piece={board[j][i]} key={i + ',' + j} size={size / w}
