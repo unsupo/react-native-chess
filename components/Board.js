@@ -77,7 +77,12 @@ const Board = () => {
                     {[...Array(h)].map((y, j) =>
                         <TouchableHighlight key={i + ',' + j+ "touch"}
                             onPress={()=> {
+                                const obj = {};
                                 const moves = chess.moves({verbose: true, square: convertCord(i, j)});
+                                obj['pressed']=moves[0].from;
+                                obj['to']=[];
+                                obj['from']=[];
+                                moves.forEach(v=>)
                                 console.log(moves);
                                 setPressed({
                                     pressed: moves[0].from,
