@@ -10,9 +10,9 @@ import React from 'react';
 import {
     Image, ImageBackground,
     StyleSheet, Text, View,
-
-
 } from 'react-native';
+import { Svg, Defs, Rect, Mask, Circle } from 'react-native-svg';
+
 
 const pieces = [
     require('../resources/pieces/bb.png'),
