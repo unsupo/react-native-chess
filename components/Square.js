@@ -33,12 +33,26 @@ const Square = (props) => {
     return (
         <ImageBackground source={pieces[props.piece]} style={styles(props)}>
             {props.coord[0] === "a" || props.coord[1] === "1" ? <Text>{props.coord}</Text> : ""}
-            <View style={styles(props).circle} />
+            <SvgCircle />
             {/*<Image style={styles(props)} source={pieces[props.piece]}/>*/}
         </ImageBackground>
     );
 };
-
+const SvgCircle = (props) => {
+    return (
+        <Svg height="100%" width="100%">
+            <Defs>
+                <Mask id="mask" x="0" y="0" height="100%" width="100%">
+                    <Rect height="100%" width="100%" fill="#fff" />
+                    <Circle r="30%" cx="50%" cy="50%"
+                            fill="black"
+                    />
+                </Mask>
+            </Defs>
+            <Rect height="100%" width="100%" fill="rgba(0, 0, 0, 0.8)" mask="url(#mask)" fill-opacity="0" />
+        </Svg>
+    );
+}
 const styles = (props) => StyleSheet.create({
     width: props.size,
     height: props.size,
