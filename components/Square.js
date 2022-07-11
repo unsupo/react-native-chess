@@ -32,8 +32,8 @@ const pieces = [
 const Square = (props) => {
     return (
         <View style={styles(props)}>
+            {props.text ? <Text>{props.text}</Text> : ""}
             <Image style={styles(props)} source={pieces[props.piece]}/>
-            <Text>props.text</Text>
         </View>
     );
 };
