@@ -47,7 +47,7 @@ const convert = (board) => {
     board.forEach((row, i) => {
         const v = []
         row.forEach((col, j) => {
-            v.push(pieces[col['color']+col['type']])
+            v.push(col ? pieces[col['color']+col['type']] : -1)
         })
         nBoard.push(v);
     });
