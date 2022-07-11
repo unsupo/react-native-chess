@@ -42,6 +42,10 @@ const defaultBoard = (w, h) => {
     def[def.length - 2] = Array(w).fill(pieces.wp);
     return def
 }
+const convert = (board) => {
+    
+}
+
 const Board = () => {
     const chess = new Chess()
     // 12 boards 1 for each type of piece 64bit integer
