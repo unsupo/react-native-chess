@@ -95,6 +95,7 @@ const Board = () => {
                                 moves.forEach(v=>v['flags']==='c'?obj['take'].push(v['to']):obj['to'].push(v['to']))
                                 console.log(obj)
                                 console.log(moves);
+                                console.log(chess.fen())
                                 setPressed(obj)
                             }}>
                             <Square piece={board[j][i]} key={i + ',' + j} size={size / w}
