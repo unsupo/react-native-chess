@@ -137,6 +137,8 @@ Look
 8-1 on left column
 a-h on bottom row
 
+promotion pop up windoww
+
 AI
 bitboard
 fen
