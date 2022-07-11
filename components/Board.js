@@ -83,11 +83,12 @@ const Board = () => {
                                 obj['to']=[];
                                 obj['take']=[];
                                 moves.forEach(v=>v['flags']==='c'?obj['take'].push(v['to']):obj['to'].push(v['to']))
-                                console.log(obj);
                                 setPressed(obj)
                             }}>
                             <Square piece={board[j][i]} key={i + ',' + j} size={size / w}
                                     coord={convertCord(i,j)}
+                                    take={pressed['take']}
+                                    to={pressed['to']}
                                     color={(i + j) % 2 === 0 ? '#d0c1a9' : '#346e37'}/>
                         </TouchableHighlight>
                     )}
