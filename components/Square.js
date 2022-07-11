@@ -8,7 +8,7 @@
 
 import React from 'react';
 import {
-    Image,
+    Image, ImageBackground,
     StyleSheet, Text, View,
 
 
@@ -31,10 +31,10 @@ const pieces = [
 
 const Square = (props) => {
     return (
-        <View style={styles(props)}>
+        <ImageBackground source={pieces[props.piece]} style={styles(props)}>
             {props.text ? <Text>{props.text}</Text> : ""}
-            <Image style={styles(props)} source={pieces[props.piece]}/>
-        </View>
+            {/*<Image style={styles(props)} source={pieces[props.piece]}/>*/}
+        </ImageBackground>
     );
 };
 
