@@ -43,6 +43,7 @@ const Square = (props) => {
     );
 };
 const styles = (props) => StyleSheet.create({
+    display: 'flex',
     width: props.size,
     height: props.size,
     backgroundColor: props.color,
