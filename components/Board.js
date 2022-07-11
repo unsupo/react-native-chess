@@ -58,7 +58,7 @@ const convertCord = (x,y) => {
     return alphaCord[x]+(8-y);
 }
 
-const chess = new Chess();
+const chess = new Chess('rnbqkbnr/ppP1p1pp/8/8/2P2p2/4p3/PP3PPP/RNBQKBNR w KQkq - 0 7');
 const Board = () => {
     // 12 boards 1 for each type of piece 64bit integer
     const w = 8;
