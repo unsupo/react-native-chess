@@ -74,6 +74,11 @@ const Board = () => {
 
 /*
 Things that can be done
+Look
+8-1 on left column
+a-h on bottom row
+
+AI
 bitboard
 fen
 calculate all moves at all times?
