@@ -67,6 +67,7 @@ const Board = () => {
     const windowHeight = Dimensions.get('window').height;
     const size = Math.min(windowWidth, windowHeight);
     const [board, setBoard] = useState(Array(w).fill(0).map(row => Array(h).fill(0)));
+    const [pressed, setPressed] = useState([]);
 
     useEffect(() => setBoard(convert(chess.board())), []);
     return (
@@ -75,7 +76,7 @@ const Board = () => {
                 <View style={styles.row} key={i}>
                     {[...Array(h)].map((y, j) =>
                         <TouchableHighlight key={i + ',' + j+ "touch"}
-                            onPress={()=>console.log(chess.moves({verbose:true, square: convertCord(i,j)}))}>
+                            onPress={()=>setPressed(chess.moves({verbose:true, square: convertCord(i,j)}))}>
                             <Square piece={board[j][i]} key={i + ',' + j} size={size / w}
                                     coord={convertCord(i,j)}
                                     color={(i + j) % 2 === 0 ? '#d0c1a9' : '#346e37'}/>
