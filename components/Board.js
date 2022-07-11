@@ -76,9 +76,11 @@ const Board = () => {
                 <View style={styles.row} key={i}>
                     {[...Array(h)].map((y, j) =>
                         <TouchableHighlight key={i + ',' + j+ "touch"}
-                            onPress={()=>{
-                                console.log(chess.moves({square: convertCord(i,j)}));
-                                setPressed(chess.moves({verbose:true, square: convertCord(i,j)}));
+                            onPress={()=> {
+                                const moves = chess.moves({verbose: true, square: convertCord(i, j)});
+                                setPressed({
+                                    pressed:
+                                })
                             }}>
                             <Square piece={board[j][i]} key={i + ',' + j} size={size / w}
                                     coord={convertCord(i,j)}
