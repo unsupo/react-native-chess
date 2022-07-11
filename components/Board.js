@@ -83,8 +83,11 @@ const Board = () => {
                                     pressed['to'].concat(pressed['take']).indexOf(coords) >= 0) {
                                     let promotion = "";
                                     if(pressed['promotion'].indexOf(coords) >= 0)
-                                        promotion = ""
-                                    chess.move({from: pressed.from, to: coords});
+                                        promotion = "q";
+                                    if(promotion)
+                                        chess.move({from: pressed.from, to: coords, promotion: promotion});
+                                    else
+                                        chess.move({from: pressed.from, to: coords});
                                     console.log({from: pressed.from, to: coords})
                                     setBoard(convert(chess.board()));
                                     return setPressed({});
