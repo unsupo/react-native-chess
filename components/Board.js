@@ -67,7 +67,7 @@ const Board = () => {
     const windowHeight = Dimensions.get('window').height;
     const size = Math.min(windowWidth, windowHeight);
     const [board, setBoard] = useState(Array(w).fill(0).map(row => Array(h).fill(0)));
-    const [pressed, setPressed] = useState([]);
+    const [pressed, setPressed] = useState({});
 
     useEffect(() => setBoard(convert(chess.board())), []);
     return (
@@ -79,6 +79,8 @@ const Board = () => {
                             onPress={()=> {
                                 const obj = {};
                                 const moves = chess.moves({verbose: true, square: convertCord(i, j)});
+                                if(!moves)
+                                    setPressed({})
                                 obj['from']=moves[0].from;
                                 obj['to']=[];
                                 obj['take']=[];
