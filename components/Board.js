@@ -54,7 +54,7 @@ const convert = (board) => {
     return nBoard;
 }
 const convertCord = (x,y) => {
-    return ['a','b','c','d','e','f','g','h'][x]+y;
+    return ['a','b','c','d','e','f','g','h'][x]+(8-y);
 }
 
 const Board = () => {
