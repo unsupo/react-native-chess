@@ -42,6 +42,7 @@ const defaultBoard = (w, h) => {
     return def
 }
 const Board = () => {
+    // 12 boards 1 for each type of piece 64bit integer
     const w = 8;
     const h = 8;
     const windowWidth = Dimensions.get('window').width;
