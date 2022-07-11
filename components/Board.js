@@ -79,7 +79,7 @@ const Board = () => {
                             onPress={()=> {
                                 const obj = {};
                                 const moves = chess.moves({verbose: true, square: convertCord(i, j)});
-                                obj['pressed']=moves[0].from;
+                                obj['from']=moves[0].from;
                                 obj['to']=[];
                                 obj['take']=[];
                                 moves.forEach(v=>v['flags']==='c'?obj['take'].push(v['to']):obj['to'].push(v['to']))
@@ -89,6 +89,7 @@ const Board = () => {
                                     coord={convertCord(i,j)}
                                     take={pressed['take']}
                                     to={pressed['to']}
+                                    from={pressed['from']}
                                     color={(i + j) % 2 === 0 ? '#d0c1a9' : '#346e37'}/>
                         </TouchableHighlight>
                     )}

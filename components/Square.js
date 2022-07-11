@@ -33,10 +33,16 @@ const Square = (props) => {
     return (
         <ImageBackground source={pieces[props.piece]} style={styles(props)}>
             {props.coord[0] === "a" || props.coord[1] === "1" ? <Text>{props.coord}</Text> : ""}
+            {props.from === props.coord ? <HighLight /> : ""}
+            {props.to.indexOf(props.coord) > 0 ? <PossibleMove /> : ""}
+            {props.take.indexOf(props.coord) > 0 ? <PossibleTakeMove /> : ""}
             {/*<Image style={styles(props)} source={pieces[props.piece]}/>*/}
         </ImageBackground>
     );
 };
+const HighLight = () => {
+    return <Svg height="100%" width="100%" style={{position: 'absolute',}} />
+}
 const PossibleMove = () => {
     return (
         <Svg height="100%" width="100%" style={{
