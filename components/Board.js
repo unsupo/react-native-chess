@@ -43,7 +43,9 @@ const defaultBoard = (w, h) => {
     return def
 }
 const convert = (board) => {
-    
+    const nBoard = [];
+    board.forEach(v=>)
+    return nBoard;
 }
 
 const Board = () => {
