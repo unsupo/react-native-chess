@@ -199,8 +199,6 @@ const modalStyles = StyleSheet.create({
         marginTop: 22
     },
     imageView: {
-        flex: 1,
-        resizeMode: 'contain'
     },
     modalView: {
         backgroundColor: "white",
