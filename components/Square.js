@@ -55,7 +55,7 @@ const colors = {
 const styles = (props) => StyleSheet.create({
     width: props.size,
     height: props.size,
-    backgroundColor: props.color === 0 ? colors.A : colors.B,
+    backgroundColor: props.from === props.coord ? : props.color === 0 ? colors.A : colors.B,
     text: {
         color: props.color === 0 ? colors.B : colors.A,
         fontWeight: "bold"
