@@ -86,7 +86,7 @@ const Board = () => {
                 console.log("Stockfish output: "+line);
             });
             await mainLoop()
-            // await sendCommand("ucinewgame\n");
+            await sendCommand("ucinewgame\n");
             // await sendCommand("position fen " + chess.fen() + "\n")
             // await sendCommand("go movetime 1000\n");
         } // starts the engine process.
