@@ -84,7 +84,7 @@ const Board = () => {
     }
 
     function squarePressed(i, j, p) {
-        getBestMove(chess.fen()).then(value => console.log(value))
+        // getBestMove(chess.fen()).then(value => console.log(value))
         // sendCommand("ucinewgame\nposition fen " + chess.fen() + "\ngo movetime 1000\n").then(r=>console.log("DONE: "+r));
         // sendCommand("position start\n").then(r=>console.log("DONE: "+r));
 
