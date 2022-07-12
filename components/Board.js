@@ -135,12 +135,12 @@ const Board = () => {
                     <TouchableWithoutFeedback onPress={() => {}}>
                         <View style={modalStyles.modalView}>
                             {["q","n","r","b"].forEach(value =>
-                                <Pressable
-                                    style={[modalStyles.button, modalStyles.buttonClose]}
-                                    onPress={() => setModalVisible(!modalVisible)}
-                                >
+                                // <Pressable
+                                //     style={[modalStyles.button, modalStyles.buttonClose]}
+                                //     onPress={() => setModalVisible(!modalVisible)}
+                                // >
                                     <Image source={pieces[piecesPos[chess.turn()+value]]} />
-                                </Pressable>
+                                {/*</Pressable>*/}
                             )}
                         </View>
                     </TouchableWithoutFeedback>
