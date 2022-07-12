@@ -200,6 +200,7 @@ const modalStyles = StyleSheet.create({
     imageView: {
     },
     modalView: {
+        width: 10,
         backgroundColor: "white",
         borderRadius: 20,
         alignItems: "center",
