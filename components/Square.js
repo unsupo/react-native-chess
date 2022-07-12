@@ -55,12 +55,12 @@ const colors = {
     BH: '#BACA2B'
 }
 const getColor = (props) =>{
-    props.history = (typeof x === 'undefined') ? {from: "nullC", to: "nullC"} : props.history;
+    let history = (typeof props.history === 'undefined') ? {from: "nullC", to: "nullC"} : props.history;
     let c = colors.A; let ch = colors.AH;
     if(props.color === 1){
         c = colors.B; ch = colors.BH;
     }
-    if([props.from, props.history.from, props.history.to].indexOf(props.coord) >= 0)
+    if([props.from, history.from, history.to].indexOf(props.coord) >= 0)
         return ch;
     return c;
 }
