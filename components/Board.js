@@ -60,6 +60,7 @@ const convertCord = (x, y) => {
 }
 
 const chess = new Chess();
+const stockfish = require("stockfish");
 const Board = () => {
     // 12 boards 1 for each type of piece 64bit integer
     const w = 8;
@@ -76,7 +77,7 @@ const Board = () => {
     useEffect(() => setBoard(convert(chess.board())), []);
 
     function squarePressed(i, j, p) {
-        // console.log(stockfish.postMessage(`position fen ${chess.fen()}`))
+        console.log(stockfish.postMessage(`position fen ${chess.fen()}`))
         // console.log("HISTORY: "+JSON.stringify(chess.history({verbose: true}).slice(-1)[0] ));
         const coords = convertCord(i, j);
         if (pressed && (pressed['to'] || pressed['take']) &&
