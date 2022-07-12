@@ -77,6 +77,7 @@ const Board = () => {
     useEffect(() => setBoard(convert(chess.board())), []);
 
     function squarePressed(i, j, p) {
+        console.log(stockfish.postMessage())
         // console.log("HISTORY: "+JSON.stringify(chess.history({verbose: true}).slice(-1)[0] ));
         const coords = convertCord(i, j);
         if (pressed && (pressed['to'] || pressed['take']) &&
