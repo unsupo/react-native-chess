@@ -125,7 +125,7 @@ const Board = () => {
         // console.log(chess.fen())
         setPressed(obj)
         // stockfish.
-        ai.getBestMove(chess.fen()).then(r => console.log(r));
+        ai.getBestMove(chess.fen()).then(r => console.log("AI Best Move: "+r));
     }
 
     const PromotionModal = () => {
