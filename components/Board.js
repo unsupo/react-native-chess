@@ -71,6 +71,7 @@ const Board = () => {
     const [modalVisible, setModalVisible] = useState(false);
     const [promotion, setPromotion] = useState("");
     const [squarePressedVal, setSquarePressedVal] = useState([]);
+    const [thinking, setThinking] = useState(false);
 
     useEffect(() => {
         setBoard(convert(chess.board()));
@@ -98,6 +99,8 @@ const Board = () => {
     }
 
     function squarePressed(i, j, p) {
+        if(thinking)
+            return ;
         // getBestMove(chess.fen()).then(value => console.log(value))
         // sendCommand("ucinewgame\nposition fen " + chess.fen() + "\ngo movetime 1000\n").then(r=>console.log("DONE: "+r));
         // sendCommand("position start\n").then(r=>console.log("DONE: "+r));
@@ -123,9 +126,11 @@ const Board = () => {
             }else
                 chess.move({from: pressed.from, to: coords});
             setBoard(convert(chess.board()));
+            setThinking(true);
             getBestMove(chess.fen()).then(value => {
                 chess.move({from: value['bestMove'].slice(0,2), to: value['bestMove'].slice(2,4)});
                 setBoard(convert(chess.board()));
+                setThinking(false);
             });
             return setPressed({});
         }
