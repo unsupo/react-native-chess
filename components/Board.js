@@ -77,7 +77,7 @@ const Board = () => {
     }, []);
 
     function getBestMove(fen) {
-        return fetch('');
+        return fetch('localhost:8080');
     }
 
     function squarePressed(i, j, p) {
