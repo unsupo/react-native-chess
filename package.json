@@ -13,6 +13,7 @@
     "chess.js": "^0.13.3",
     "react": "18.0.0",
     "react-native": "0.69.1",
+    "react-native-stockfish-android": "^0.2.2",
     "react-native-svg": "^12.3.0"
   },
   "devDependencies": {
