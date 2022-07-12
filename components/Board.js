@@ -180,7 +180,8 @@ Look
 8-1 on left column
 a-h on bottom row
 
-promotion pop up window queen knight rook bishop picture coming off of promotion spot with x (close) to take back
+
+highlight last move
 
 AI
 bitboard
