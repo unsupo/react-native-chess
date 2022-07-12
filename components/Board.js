@@ -84,7 +84,7 @@ const Board = () => {
 
     useEffect(async () => {
         setBoard(convert(chess.board()));
-        await mainLoop(); // starts the engine process.
+        mainLoop(); // starts the engine process.
     }, []);
 
     function squarePressed(i, j, p) {
