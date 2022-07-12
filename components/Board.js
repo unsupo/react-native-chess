@@ -85,7 +85,7 @@ const Board = () => {
                 return setModalVisible(true);
                 // promotion = "q";
             }
-            if (promotion) {
+            if (p) {
                 chess.move({
                     from: pressed.from,
                     to: coords,
