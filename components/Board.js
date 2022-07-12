@@ -140,7 +140,7 @@ const Board = () => {
                     }}>
                         <View style={modalStyles.modalView}>
                             {["q", "n", "r", "b"].map(value =>
-                                <Pressable key={value} onPress={()=>{console.log('promotinon: '+value); setPromotion(value); setModalVisible(!modalVisible); squarePressed(...squarePressedVal)}}>
+                                <Pressable key={value} onPress={()=>{console.log('promotinon: '+value); setPromotion(value); setModalVisible(!modalVisible); squarePressed(...squarePressedVal,value)}}>
                                     <Image style={{width: size / (w - 1), height: size / (w - 1)}}
                                            source={pieces[piecesPos[chess.turn() + value]]}/>
                                 </Pressable>
