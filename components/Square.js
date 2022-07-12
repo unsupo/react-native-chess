@@ -61,7 +61,8 @@ const styles = (props) => StyleSheet.create({
         fontWeight: "bold"
     },
     bottomRight: {
-        position: "absolute", bottom: 0, right: 0
+        position: "absolute", bottom: 0, right: 0,
+        paddingRight: 1
     },
     topLeft: {
         paddingLeft: 1
