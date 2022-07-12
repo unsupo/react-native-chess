@@ -77,13 +77,6 @@ const Board = () => {
     const [squarePressedVal, setSquarePressedVal] = useState([]);
 
 
-    useEffect(() => {
-        setBoard(convert(chess.board()));
-        setup();
-
-        cleanUp;
-    }, [setup]);
-
     function squarePressed(i, j, p) {
         // sendCommand("ucinewgame\nposition fen " + chess.fen() + "\ngo movetime 1000\n").then(r=>console.log("DONE: "+r));
         sendCommand("position start\n").then(r=>console.log("DONE: "+r));
@@ -326,6 +319,13 @@ const Board = () => {
             await shutdownStockfish();
         };
     }
+
+    useEffect(() => {
+        setBoard(convert(chess.board()));
+        setup();
+
+        cleanUp;
+    }, [setup]);
 };
 
 /*
