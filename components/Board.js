@@ -79,7 +79,6 @@ const Board = () => {
             pressed['to'].concat(pressed['take']).indexOf(coords) >= 0) {
             let promotion = "";
             if (pressed['promotion'].indexOf(coords) >= 0) {
-                <PromotionModal />
                 promotion = "q";
             }
             if (promotion)
@@ -122,6 +121,7 @@ const Board = () => {
 
     return (
         <View style={{flexDirection: 'row', width: size, height: size, backgroundColor: '#8d00d4'}}>
+            <PromotionModal />
             {[...Array(w)].map((x, i) =>
                 <View style={styles.row} key={i}>
                     {[...Array(h)].map((y, j) =>
