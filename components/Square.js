@@ -15,7 +15,8 @@ import {pieces} from "./Pieces";
 const Square = (props) => {
     return (
         <ImageBackground source={pieces[props.piece]} style={styles(props)}>
-            {props.coord[0] === "a" || props.coord[1] === "1" ? <Text style={styles(props).text}>{props.coord[0] === "a" ? props.coord[1] : props.coord[0]}</Text> : ""}
+            {props.coord[0] === "a" ? <Text style={styles(props).text}>{props.coord[1]}</Text> : ""}
+            {props.coord[1] === "1" ? <Text style={styles(props).text}>{props.coord[0]}</Text> : ""}
             {props.from === props.coord ? <HighLight /> : ""}
             {props.to && props.to.indexOf(props.coord) >= 0 ? <PossibleMove /> : ""}
             {props.take && props.take.indexOf(props.coord) >= 0 ? <PossibleTakeMove /> : ""}
