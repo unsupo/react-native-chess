@@ -47,11 +47,14 @@ const PossibleTakeMove = () => {
         </Svg>
     )
 }
-
+const colors = {
+    A: '#d0c1a9',
+    B: '#346e37'
+}
 const styles = (props) => StyleSheet.create({
     width: props.size,
     height: props.size,
-    backgroundColor: props.color,
+    backgroundColor: props.color === 1 ? colors.A : colors.B,
 });
 
 export default Square;

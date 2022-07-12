@@ -165,7 +165,7 @@ const Board = () => {
                                     take={pressed['take']}
                                     to={pressed['to']}
                                     from={pressed['from']}
-                                    color={(i + j) % 2 === 0 ? '#d0c1a9' : '#346e37'}/>
+                                    color={(i + j) % 2 === 0}/>
                         </TouchableHighlight>
                     )}
                 </View>
