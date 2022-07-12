@@ -21,7 +21,7 @@ export class AI {
         // await sendCommand("position start\n");
         await sendCommand("ucinewgame");
         await sendCommand("position fen " + fen);
-        await sendCommand("go movetime 1000");
+        return await sendCommand("go movetime 1000");
     }
 
     async stop() {
