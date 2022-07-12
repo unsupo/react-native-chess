@@ -77,8 +77,8 @@ const Board = () => {
     }, []);
 
     async function getBestMove(fen) {
-        const response = await fetch('localhost:8080', {method: 'POST', body: JSON.stringify({'fen': fen})}).catch(reason => console.log(reason));
-        return response.json()
+        const response = await fetch('localhost:8080', {method: 'POST', body: JSON.stringify({'fen': fen})}).catch(reason => console.log("request error: "+reason));
+        return response ? response.json() : "";
     }
 
     function squarePressed(i, j, p) {
