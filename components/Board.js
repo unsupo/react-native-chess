@@ -6,17 +6,17 @@
  * @flow strict-local
  */
 
-import React, {useCallback, useEffect, useState} from 'react';
+import React, {useCallback, useRef, useEffect, useState} from 'react';
 import {
     Dimensions, Image, Modal, Pressable, ScrollView,
     StyleSheet, Text, TouchableHighlight, TouchableOpacity, TouchableWithoutFeedback, View,
+    EmitterSubscription,NativeEventEmitter, NativeModules
 } from 'react-native';
 import Square from "./Square";
 import {Chess} from "chess.js";
 import {pieces} from "./Pieces";
 // Notice that all methods are asynchronous.
 import { mainLoop, shutdownStockfish, sendCommand } from 'react-native-stockfish-android';
-import { NativeEventEmitter, NativeModules } from 'react-native'; // in order to read Stockfish output.
 
 
 const piecesPos = {
