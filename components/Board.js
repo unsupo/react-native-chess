@@ -75,14 +75,12 @@ const Board = () => {
 
     useEffect(() => setBoard(convert(chess.board())), []);
 
-    function squarePressed(i, j) {
+    function squarePressed(i, j, p) {
         console.log(chess.turn());
         const coords = convertCord(i, j);
         if (pressed && (pressed['to'] || pressed['take']) &&
             pressed['to'].concat(pressed['take']).indexOf(coords) >= 0) {
-            console.log(promotion);
-            if (pressed['promotion'].indexOf(coords) >= 0 && promotion === "") {
-                console.log(promotion);
+            if (pressed['promotion'].indexOf(coords) >= 0 && !p) {
                 setSquarePressedVal([i,j]);
                 return setModalVisible(true);
                 // promotion = "q";
@@ -91,7 +89,7 @@ const Board = () => {
                 chess.move({
                     from: pressed.from,
                     to: coords,
-                    promotion: promotion
+                    promotion: p
                 });
                 setPromotion("");
                 setSquarePressedVal([]);
