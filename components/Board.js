@@ -59,7 +59,7 @@ const convertCord = (x, y) => {
     return alphaCord[x] + (8 - y);
 }
 
-const chess = new Chess('rnbqkbnr/ppP1p1pp/8/8/2P2p2/4p3/PP3PPP/RNBQKBNR w KQkq - 0 7');
+const chess = new Chess();
 const Board = () => {
     // 12 boards 1 for each type of piece 64bit integer
     const w = 8;
@@ -76,7 +76,7 @@ const Board = () => {
     useEffect(() => setBoard(convert(chess.board())), []);
 
     function squarePressed(i, j, p) {
-        console.log("HISTORY: "+JSON.stringify(chess.history({verbose: true}).slice(-1)[0] ));
+        // console.log("HISTORY: "+JSON.stringify(chess.history({verbose: true}).slice(-1)[0] ));
         const coords = convertCord(i, j);
         if (pressed && (pressed['to'] || pressed['take']) &&
             pressed['to'].concat(pressed['take']).indexOf(coords) >= 0) {
