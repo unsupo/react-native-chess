@@ -57,6 +57,7 @@ const styles = (props) => StyleSheet.create({
     backgroundColor: props.color === 0 ? colors.A : colors.B,
     text: {
         color: props.color === 0 ? colors.B : colors.A,
+        fontWeight: "bold"
     }
 });
 
