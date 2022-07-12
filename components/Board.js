@@ -80,7 +80,7 @@ const Board = () => {
         const response = await fetch('http://localhost:8080', {method: 'POST', body: JSON.stringify({'fen': fen})}).catch(reason => console.log("request error: "+reason));
         // const response = await fetch('https://api.m3o.com/v1/helloworld/Call').catch(reason => console.log("request error: "+reason));
 
-        return response ? response.json() : "";
+        return response ? response : "";
     }
 
     function squarePressed(i, j, p) {
