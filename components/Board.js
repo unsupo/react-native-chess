@@ -121,7 +121,7 @@ const Board = () => {
     }
 
     const PromotionModal = () => {
-        return (<TouchableWithoutFeedback onPress={setModalVisible(!modalVisible)}>
+        return (<TouchableWithoutFeedback onPress={setModalVisible(false)}>
             <Modal
                 animationType="slide"
                 transparent={true}
