@@ -182,7 +182,11 @@ Look
 a-h on bottom row
 
 
-highlight last move both in yellow
+buttons at botton
+options|new|analysis|back|forward
+options -> (modal) flip board, copy PNG, resing
+new -> (modal) are you sure you want to end this game cancel, end game
+
 
 AI
 bitboard
