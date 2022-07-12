@@ -80,7 +80,7 @@ const Board = () => {
         const coords = convertCord(i, j);
         if (pressed && (pressed['to'] || pressed['take']) &&
             pressed['to'].concat(pressed['take']).indexOf(coords) >= 0) {
-            if (pressed['promotion'].indexOf(coords) >= 0 && !promotion) {
+            if (pressed['promotion'].indexOf(coords) >= 0 && promotion === "") {
                 setSquarePressedVal([i,j]);
                 return setModalVisible(true);
                 // promotion = "q";
