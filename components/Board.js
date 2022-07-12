@@ -71,6 +71,7 @@ const Board = () => {
     const [pressed, setPressed] = useState({});
     const [modalVisible, setModalVisible] = useState(false);
     const [promotion, setPromotion] = useState("");
+    const [squarePressedVal, setSquarePressedVal] = useState([]);
 
     useEffect(() => setBoard(convert(chess.board())), []);
 
@@ -80,6 +81,7 @@ const Board = () => {
         if (pressed && (pressed['to'] || pressed['take']) &&
             pressed['to'].concat(pressed['take']).indexOf(coords) >= 0) {
             if (pressed['promotion'].indexOf(coords) >= 0 && !promotion) {
+                setSquarePressedVal([i,j]);
                 return setModalVisible(true);
                 // promotion = "q";
             }
@@ -90,6 +92,7 @@ const Board = () => {
                     promotion: promotion
                 });
                 setPromotion("");
+                setSquarePressedVal([]);
             }else
                 chess.move({from: pressed.from, to: coords});
             console.log({from: pressed.from, to: coords})
@@ -137,7 +140,7 @@ const Board = () => {
                     }}>
                         <View style={modalStyles.modalView}>
                             {["q", "n", "r", "b"].map(value =>
-                                <Pressable onPress={()=>{setPromotion(value); console.log(value)}}>
+                                <Pressable onPress={()=>{setPromotion(value); setModalVisible(!modalVisible); squarePressed(...squarePressedVal)}}>
                                     <Image style={{width: size / (w - 1), height: size / (w - 1)}}
                                            source={pieces[piecesPos[chess.turn() + value]]}/>
                                 </Pressable>
