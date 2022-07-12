@@ -76,7 +76,7 @@ const Board = () => {
     useEffect(() => setBoard(convert(chess.board())), []);
 
     function squarePressed(i, j, p) {
-        console.log("HISTORY: "+chess.history({verbose: true}));
+        console.log("HISTORY: "+JSON.stringify(chess.history({verbose: true})));
         const coords = convertCord(i, j);
         if (pressed && (pressed['to'] || pressed['take']) &&
             pressed['to'].concat(pressed['take']).indexOf(coords) >= 0) {
