@@ -199,6 +199,7 @@ const modalStyles = StyleSheet.create({
         marginTop: 22
     },
     imageView: {
+        width: 5
     },
     modalView: {
         backgroundColor: "white",
