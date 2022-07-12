@@ -95,7 +95,7 @@ const Board = () => {
                 setSquarePressedVal([]);
             }else
                 chess.move({from: pressed.from, to: coords});
-            console.log({from: pressed.from, to: coords})
+            console.log({from: pressed.from, to: coords, p: p})
             setBoard(convert(chess.board()));
             return setPressed({});
         }
@@ -140,7 +140,7 @@ const Board = () => {
                     }}>
                         <View style={modalStyles.modalView}>
                             {["q", "n", "r", "b"].map(value =>
-                                <Pressable key={value} onPress={()=>{console.log('promotinon: '+value); setPromotion(value); setModalVisible(!modalVisible); squarePressed(...squarePressedVal,value)}}>
+                                <Pressable key={value} onPress={()=>{console.log('promotinon: '+value); setPromotion(value); setModalVisible(!modalVisible); squarePressed(squarePressedVal[0], squarePressedVal[1],value)}}>
                                     <Image style={{width: size / (w - 1), height: size / (w - 1)}}
                                            source={pieces[piecesPos[chess.turn() + value]]}/>
                                 </Pressable>
