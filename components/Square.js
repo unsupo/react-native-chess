@@ -54,6 +54,10 @@ const colors = {
     AH: '#F6F669',
     BH: '#BACA2B'
 }
+const highlight = (props) =>{
+    
+}
+
 const styles = (props) => StyleSheet.create({
     width: props.size,
     height: props.size,
