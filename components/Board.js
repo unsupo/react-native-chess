@@ -6,18 +6,14 @@
  * @flow strict-local
  */
 
-import React, {useCallback, useRef, useEffect, useState} from 'react';
+import React, {useCallback, useEffect, useState} from 'react';
 import {
     Dimensions, Image, Modal, Pressable, ScrollView,
     StyleSheet, Text, TouchableHighlight, TouchableOpacity, TouchableWithoutFeedback, View,
-    EmitterSubscription,NativeEventEmitter, NativeModules
 } from 'react-native';
 import Square from "./Square";
 import {Chess} from "chess.js";
 import {pieces} from "./Pieces";
-// Notice that all methods are asynchronous.
-import { mainLoop, shutdownStockfish, sendCommand } from 'react-native-stockfish-android';
-
 
 const piecesPos = {
     bb: 0,
@@ -76,10 +72,13 @@ const Board = () => {
     const [promotion, setPromotion] = useState("");
     const [squarePressedVal, setSquarePressedVal] = useState([]);
 
+    useEffect(() => {
+        setBoard(convert(chess.board()));
+    }, []);
 
     function squarePressed(i, j, p) {
         // sendCommand("ucinewgame\nposition fen " + chess.fen() + "\ngo movetime 1000\n").then(r=>console.log("DONE: "+r));
-        sendCommand("position start\n").then(r=>console.log("DONE: "+r));
+        // sendCommand("position start\n").then(r=>console.log("DONE: "+r));
 
         // ai.getBestMove(chess.fen()).then(r => console.log("AI Best Move: "+r));
         // console.log("HISTORY: "+JSON.stringify(chess.history({verbose: true}).slice(-1)[0] ));
@@ -181,151 +180,6 @@ const Board = () => {
             )}
         </View>
     );
-
-
-
-    const [bestMove, setBestMove] = useState<string>('');
-    const [startPosition, setStartPosition] = useState<string>(chess.fen());
-    const [error, setError] = useState<boolean>(false);
-    const [gameOver, setGameOver] = useState<boolean>(false);
-    const [thinkingTime, setThinkingTime] = useState<number>(500);
-    const [playedMoves, setPlayedMoves] = useState<string>('');
-    const [isReady, setIsReady] = useState<boolean>(false);
-
-    const countPieceType = useCallback((board, pieceType) => {
-        let count = 0;
-        for (let line of board) {
-            for (let piece of line) {
-                if (piece === pieceType) count++;
-            }
-        }
-        return count;
-    }, []);
-
-    const searchBestMove = useCallback(async () => {
-        if (!isReady) return;
-        const positionWithTurnReversed = startPosition
-            .split(' ')
-            .map((elt, index) => {
-                if (index === 1) {
-                    return elt.toLowerCase() === 'w' ? 'b' : 'w';
-                } else {
-                    return elt;
-                }
-            })
-            .join(' ');
-
-        const validatedByChessJS = chess.validateFen(startPosition).valid;
-        const otherKingInChess = validatedByChessJS
-            ? new Chess(positionWithTurnReversed).inCheck()
-            : false;
-        const localChess = validatedByChessJS ? new Chess(startPosition) : null;
-
-        const isChessmateOrStalemate =
-            localChess?.inCheckmate() || localChess?.inStalemate();
-
-        const boardPart = startPosition.split(' ')[0];
-        const boardArray = boardPart.split('/').map((line) => line.split(''));
-        const whiteKings = countPieceType(boardArray, 'K');
-        const blackKings = countPieceType(boardArray, 'k');
-
-        const isValidPosition =
-            validatedByChessJS &&
-            whiteKings === 1 &&
-            blackKings === 1 &&
-            !otherKingInChess;
-        if (isChessmateOrStalemate) {
-            setGameOver(true);
-        } else if (isValidPosition) {
-            /////////////////////////////////
-            console.log(
-                'Position command : ' +
-                `position fen ${startPosition} ${playedMoves.length > 0 ? ' moves ' + playedMoves : ''
-                }`
-            );
-            console.log('Searching move for position: ' + startPosition);
-            /////////////////////////////////
-            await sendCommand(
-                `position fen ${startPosition} ${playedMoves.length > 0 ? ' moves ' + playedMoves : '\n'
-                }`
-            );
-            await sendCommand(`go movetime ${thinkingTime}\n`);
-        } else {
-            setError(true);
-        }
-    }, [startPosition, countPieceType, thinkingTime, playedMoves, isReady]);
-
-    const handleThinkingTimeUpdate = useCallback((newValue) => {
-        setThinkingTime(newValue[0]);
-    }, []);
-
-    const handleNewPositionEntered = useCallback((newValue) => {
-        setStartPosition(newValue);
-        setError(false);
-        setGameOver(false);
-    }, []);
-
-    const handlePlayedMovesEntered = useCallback((newValue) => {
-        setPlayedMoves(newValue);
-    }, []);
-
-    const resetPosition = useCallback(() => {
-        setStartPosition(INITIAL_POSITION);
-        setError(false);
-        setGameOver(false);
-    }, []);
-
-    const handleStockfishOutput = useCallback((output: string) => {
-        ///////////////////////////
-        console.log(output);
-        ///////////////////////////
-        if (output.startsWith('bestmove')) {
-            const parts = output.split(' ');
-            setBestMove(parts[1]);
-        } else if (output === 'readyok\n') {
-            setIsReady(true);
-        }
-    }, []);
-
-    const setup = useCallback(() => {
-        const eventEmitter = new NativeEventEmitter(
-            NativeModules.ReactNativeStockfishChessEngine
-        );
-        stockfishEventListener.current = eventEmitter.addListener(
-            'stockfish-output',
-            (event) => {
-                handleStockfishOutput(event);
-            }
-        );
-
-        setTimeout(async () => {
-            await mainLoop();
-
-            setTimeout(async () => {
-                await sendCommand('uci\n');
-
-                setTimeout(async () => {
-                    await sendCommand('isready\n');
-                }, 150);
-
-            }, 50);
-        }, 100);
-    }, [handleStockfishOutput]);
-
-    const stockfishEventListener = useRef<EmitterSubscription>();
-
-    function cleanUp() {
-        return async () => {
-            await shutdownStockfish();
-        };
-    }
-
-    useEffect(() => {
-        setBoard(convert(chess.board()));
-        setup();
-
-        cleanUp;
-    }, [setup]);
 };
 
 /*
