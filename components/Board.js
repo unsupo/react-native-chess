@@ -60,7 +60,7 @@ const convertCord = (x, y) => {
 }
 
 const chess = new Chess();
-const stockfish = new Worker("stockfish.js");
+const stockfish = require("stockfish");
 const Board = () => {
     // 12 boards 1 for each type of piece 64bit integer
     const w = 8;
