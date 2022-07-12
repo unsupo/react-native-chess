@@ -76,12 +76,13 @@ const Board = () => {
         setBoard(convert(chess.board()));
     }, []);
 
-    function getBestMove(fen) {
-        return fetch('localhost:8080');
+    async function getBestMove(fen) {
+        const response = await fetch('localhost:8080', {method: 'POST', body: JSON.stringify({'fen': fen})});
+        return response.json()
     }
 
     function squarePressed(i, j, p) {
-        console.log(getBestMove(chess.fen()))
+        getBestMove(chess.fen()).then(value => console.log(value))
         // sendCommand("ucinewgame\nposition fen " + chess.fen() + "\ngo movetime 1000\n").then(r=>console.log("DONE: "+r));
         // sendCommand("position start\n").then(r=>console.log("DONE: "+r));
 
