@@ -78,7 +78,7 @@ const Board = () => {
 
     async function getBestMove(fen) {
         // const response = await fetch('http://10.0.2.2:8080', {method: 'POST', body: JSON.stringify({'fen': fen})}).catch(reason => console.log("request error: "+reason));
-        const response = await fetch('http://10.0.2.2/api/test').catch(reason => console.log("request error: "+reason));
+        const response = await fetch('https://api.m3o.com/v1/helloworld/Call').catch(reason => console.log("request error: "+reason));
 
         return response ? response.json() : "";
     }
