@@ -165,7 +165,7 @@ const Board = () => {
                                     take={pressed['take']}
                                     to={pressed['to']}
                                     from={pressed['from']}
-                                    history={chess.history({verbose: true})[-1]}
+                                    history={chess.history({verbose: true})}
                                     color={(i + j) % 2}/>
                         </TouchableHighlight>
                     )}
