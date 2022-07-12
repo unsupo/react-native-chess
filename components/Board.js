@@ -129,17 +129,22 @@ const Board = () => {
                 setModalVisible(!modalVisible);
             }}
         >
-            <View style={modalStyles.centeredView}>
-                <View style={modalStyles.modalView}>
-                    <Text style={modalStyles.modalText}>Hello World!</Text>
-                    <Pressable
-                        style={[modalStyles.button, modalStyles.buttonClose]}
-                        onPress={() => setModalVisible(!modalVisible)}
-                    >
-                        <Text style={modalStyles.textStyle}>Hide Modal</Text>
-                    </Pressable>
+            <TouchableWithoutFeedback onPress={() => setModalVisible(!modalVisible)}>
+                <View style={modalStyles.centeredView}>
+                    <TouchableWithoutFeedback onPress={() => {
+                    }}>
+                        <View style={modalStyles.modalView}>
+                            <Text style={modalStyles.modalText}>Hello World!</Text>
+                            <Pressable
+                                style={[modalStyles.button, modalStyles.buttonClose]}
+                                onPress={() => setModalVisible(!modalVisible)}
+                            >
+                                <Text style={modalStyles.textStyle}>Hide Modal</Text>
+                            </Pressable>
+                        </View>
+                    </TouchableWithoutFeedback>
                 </View>
-            </View>
+            </TouchableWithoutFeedback>
         </Modal>);
     }
 
