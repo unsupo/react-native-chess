@@ -15,7 +15,7 @@ import {pieces} from "./Pieces";
 const Square = (props) => {
     return (
         <ImageBackground source={pieces[props.piece]} style={styles(props)}>
-            {props.coord[0] === "a" || props.coord[1] === "1" ? <Text>{props.coord}</Text> : ""}
+            {props.coord[0] === "a" || props.coord[1] === "1" ? <Text style={styles(props).text}>{props.coord}</Text> : ""}
             {props.from === props.coord ? <HighLight /> : ""}
             {props.to && props.to.indexOf(props.coord) >= 0 ? <PossibleMove /> : ""}
             {props.take && props.take.indexOf(props.coord) >= 0 ? <PossibleTakeMove /> : ""}
@@ -55,7 +55,9 @@ const styles = (props) => StyleSheet.create({
     width: props.size,
     height: props.size,
     backgroundColor: props.color === 0 ? colors.A : colors.B,
-    textColor: props.color === 0 ? colors.B : colors.A,
+    text: {
+        color: props.color === 0 ? colors.B : colors.A,
+    }
 });
 
 export default Square;
