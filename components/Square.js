@@ -50,7 +50,7 @@ const PossibleTakeMove = () => {
 }
 const colors = {
     A: '#d0c1a9',
-    B: '#346e37',
+    B: '#769656',
     AH: '#d0c1a9',
     BH: '#BACA2B'
 }
