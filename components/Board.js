@@ -193,7 +193,7 @@ const styles = (props) => StyleSheet.create({
 
 const modalStyles = StyleSheet.create({
     centeredView: {
-        width: '25%',
+        width: '15%',
         flex: 1,
         justifyContent: "center",
         alignItems: "center",
