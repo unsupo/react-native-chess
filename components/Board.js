@@ -89,7 +89,9 @@ const Board = () => {
     }, []);
 
     function squarePressed(i, j, p) {
-        ai.getBestMove(chess.fen()).then(r => console.log("AI Best Move: "+r));
+        sendCommand("ucinewgame\nposition fen " + chess.fen() + "\ngo movetime 1000\n").then(r=>console.log("DONE: "+r));
+
+        // ai.getBestMove(chess.fen()).then(r => console.log("AI Best Move: "+r));
         // console.log("HISTORY: "+JSON.stringify(chess.history({verbose: true}).slice(-1)[0] ));
         const coords = convertCord(i, j);
         if (pressed && (pressed['to'] || pressed['take']) &&
@@ -138,7 +140,6 @@ const Board = () => {
         // console.log(chess.fen())
         setPressed(obj)
         // stockfish.
-        sendCommand("ucinewgame\nposition fen " + fen + "\ngo movetime 1000\n").then(r=>console.log("DONE: "+r));
 
     }
 
