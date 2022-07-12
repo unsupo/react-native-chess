@@ -47,15 +47,15 @@ const convert = (board) => {
     board.forEach((row, i) => {
         const v = []
         row.forEach((col, j) => {
-            v.push(col ? pieces[col['color']+col['type']] : -1)
+            v.push(col ? pieces[col['color'] + col['type']] : -1)
         })
         nBoard.push(v);
     });
     return nBoard;
 }
-const alphaCord = ['a','b','c','d','e','f','g','h'];
-const convertCord = (x,y) => {
-    return alphaCord[x]+(8-y);
+const alphaCord = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'];
+const convertCord = (x, y) => {
+    return alphaCord[x] + (8 - y);
 }
 
 const chess = new Chess('rnbqkbnr/ppP1p1pp/8/8/2P2p2/4p3/PP3PPP/RNBQKBNR w KQkq - 0 7');
@@ -68,57 +68,67 @@ const Board = () => {
     const size = Math.min(windowWidth, windowHeight);
     const [board, setBoard] = useState(Array(w).fill(0).map(row => Array(h).fill(0)));
     const [pressed, setPressed] = useState({});
+    const [modalVisible, setModalVisible] = useState(false);
 
     useEffect(() => setBoard(convert(chess.board())), []);
+
+    function squarePressed(i, j) {
+        console.log(chess.turn());
+        const coords = convertCord(i, j);
+        if (pressed && (pressed['to'] || pressed['take']) &&
+            pressed['to'].concat(pressed['take']).indexOf(coords) >= 0) {
+            let promotion = "";
+            if (pressed['promotion'].indexOf(coords) >= 0) {
+                <PromotionModal />
+                promotion = "q";
+            }
+            if (promotion)
+                chess.move({
+                    from: pressed.from,
+                    to: coords,
+                    promotion: promotion
+                });
+            else
+                chess.move({from: pressed.from, to: coords});
+            console.log({from: pressed.from, to: coords})
+            setBoard(convert(chess.board()));
+            return setPressed({});
+        }
+        const obj = {};
+        const moves = chess.moves({verbose: true, square: coords});
+        if (!moves || !moves[0])
+            return setPressed({})
+        obj['from'] = moves[0].from;
+        obj['to'] = [];
+        obj['take'] = [];
+        obj['promotion'] = []
+        moves.forEach(v => {
+                switch (v['flags']) {
+                    case 'cp':
+                        obj['promotion'].push(v['to']);
+                    case 'c':
+                        obj['take'].push(v['to']);
+                        break
+                    default:
+                        obj['to'].push(v['to']);
+                }
+            }
+        )
+        console.log(obj)
+        console.log(moves);
+        console.log(chess.fen())
+        setPressed(obj)
+    }
+
     return (
         <View style={{flexDirection: 'row', width: size, height: size, backgroundColor: '#8d00d4'}}>
             {[...Array(w)].map((x, i) =>
                 <View style={styles.row} key={i}>
                     {[...Array(h)].map((y, j) =>
-                        <TouchableHighlight key={i + ',' + j+ "touch"}
-                            onPress={()=> {
-                                console.log(chess.turn());
-                                const coords = convertCord(i, j);
-                                if(pressed && (pressed['to'] || pressed['take']) &&
-                                    pressed['to'].concat(pressed['take']).indexOf(coords) >= 0) {
-                                    let promotion = "";
-                                    if(pressed['promotion'].indexOf(coords) >= 0)
-                                        promotion = "q";
-                                    if(promotion)
-                                        chess.move({from: pressed.from, to: coords, promotion: promotion});
-                                    else
-                                        chess.move({from: pressed.from, to: coords});
-                                    console.log({from: pressed.from, to: coords})
-                                    setBoard(convert(chess.board()));
-                                    return setPressed({});
-                                }
-                                const obj = {};
-                                const moves = chess.moves({verbose: true, square: coords});
-                                if(!moves || !moves[0])
-                                    return setPressed({})
-                                obj['from']=moves[0].from;
-                                obj['to']=[];
-                                obj['take']=[];
-                                obj['promotion']=[]
-                                moves.forEach(v=> {
-                                        switch (v['flags']) {
-                                            case 'cp':
-                                                obj['promotion'].push(v['to']);
-                                            case 'c':
-                                                obj['take'].push(v['to']);
-                                                break
-                                            default:
-                                                obj['to'].push(v['to']);
-                                        }
-                                    }
-                                )
-                                console.log(obj)
-                                console.log(moves);
-                                console.log(chess.fen())
-                                setPressed(obj)
-                            }}>
+                        <TouchableHighlight key={i + ',' + j + "touch"}
+                                            onPress={() => squarePressed(i, j) }>
                             <Square piece={board[j][i]} key={i + ',' + j} size={size / w}
-                                    coord={convertCord(i,j)}
+                                    coord={convertCord(i, j)}
                                     take={pressed['take']}
                                     to={pressed['to']}
                                     from={pressed['from']}
