@@ -76,7 +76,7 @@ const Board = () => {
     useEffect(() => setBoard(convert(chess.board())), []);
 
     function squarePressed(i, j, p) {
-        console.log(chess.turn());
+        console.log(chess.history());
         const coords = convertCord(i, j);
         if (pressed && (pressed['to'] || pressed['take']) &&
             pressed['to'].concat(pressed['take']).indexOf(coords) >= 0) {
