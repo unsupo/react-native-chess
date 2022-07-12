@@ -193,6 +193,7 @@ const styles = (props) => StyleSheet.create({
 
 const modalStyles = StyleSheet.create({
     centeredView: {
+        width: '25%',
         flex: 1,
         justifyContent: "center",
         alignItems: "center",
@@ -201,7 +202,6 @@ const modalStyles = StyleSheet.create({
     imageView: {
     },
     modalView: {
-        width: '15%',
         backgroundColor: "white",
         borderRadius: 20,
         alignItems: "center",
