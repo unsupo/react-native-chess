@@ -55,7 +55,7 @@ const colors = {
     BH: '#BACA2B'
 }
 const getColor = (props) =>{
-    let history = (typeof props.history === 'undefined') ? {from: "nullC", to: "nullC"} : props.history[-1];
+    let history = (typeof props.history === 'undefined') ? {from: "nullC", to: "nullC"} : props.history;
     let c = colors.A; let ch = colors.AH;
     if(props.color === 1){
         c = colors.B; ch = colors.BH;
