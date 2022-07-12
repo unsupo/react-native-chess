@@ -76,7 +76,7 @@ const Board = () => {
     useEffect(() => setBoard(convert(chess.board())), []);
 
     function squarePressed(i, j, p) {
-        console.log("HISTORY: "+JSON.stringify(chess.history({verbose: true})[-1]));
+        console.log("HISTORY: "+JSON.stringify(chess.history({verbose: true}).slice(-1)[0] ));
         const coords = convertCord(i, j);
         if (pressed && (pressed['to'] || pressed['take']) &&
             pressed['to'].concat(pressed['take']).indexOf(coords) >= 0) {
@@ -165,7 +165,7 @@ const Board = () => {
                                     take={pressed['take']}
                                     to={pressed['to']}
                                     from={pressed['from']}
-                                    history={chess.history({verbose: true})[-1]}
+                                    history={chess.history({verbose: true}).slice(-1)[0]}
                                     color={(i + j) % 2}/>
                         </TouchableHighlight>
                     )}
