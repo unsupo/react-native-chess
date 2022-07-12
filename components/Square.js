@@ -50,12 +50,14 @@ const PossibleTakeMove = () => {
 }
 const colors = {
     A: '#d0c1a9',
-    B: '#346e37'
+    B: '#346e37',
+    AH: '#d0c1a9',
+    BH: '#346e37'
 }
 const styles = (props) => StyleSheet.create({
     width: props.size,
     height: props.size,
-    backgroundColor: props.from === props.coord ? : props.color === 0 ? colors.A : colors.B,
+    backgroundColor: props.from === props.coord ? props.color === 0 ? colors.AH : colors.BH : props.color === 0 ? colors.A : colors.B,
     text: {
         color: props.color === 0 ? colors.B : colors.A,
         fontWeight: "bold"
