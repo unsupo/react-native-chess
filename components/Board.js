@@ -80,14 +80,15 @@ const Board = () => {
 
     useEffect(() => {
         setBoard(convert(chess.board()));
-
-        // Also you need to listen to the event 'stockfish-output' in order to get output lines from Stockfish.
-        const eventListener = eventEmitter.addListener('stockfish-output', (line) => {
-            console.log("Stockfish output: "+line);
-        });
         const asyncMainLoop = async () => {
+            // Also you need to listen to the event 'stockfish-output' in order to get output lines from Stockfish.
+            const eventListener = eventEmitter.addListener('stockfish-output', (line) => {
+                console.log("Stockfish output: "+line);
+            });
             await mainLoop()
-            await sendCommand("position start\n")
+            await sendCommand("ucinewgame\n");
+            await sendCommand("position fen " + chess.fen() + "\n")
+            await sendCommand("go movetime 1000\n");
         } // starts the engine process.
         asyncMainLoop()
     }, []);
