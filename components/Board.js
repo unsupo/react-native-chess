@@ -121,15 +121,15 @@ const Board = () => {
     }
 
     const PromotionModal = () => {
-        return (<TouchableWithoutFeedback onPress={setModalVisible(false)}>
-            <Modal
-                animationType="slide"
-                transparent={true}
-                visible={modalVisible}
-                onRequestClose={() => {
-                    setModalVisible(!modalVisible);
-                }}
-            >
+        return (<Modal
+            animationType="slide"
+            transparent={true}
+            visible={modalVisible}
+            onRequestClose={() => {
+                setModalVisible(!modalVisible);
+            }}
+        >
+            <TouchableWithoutFeedback onPress={setModalVisible(!modalVisible)}>
                 <View style={modalStyles.centeredView}>
                     <View style={modalStyles.modalView}>
                         <Text style={modalStyles.modalText}>Hello World!</Text>
@@ -141,8 +141,8 @@ const Board = () => {
                         </Pressable>
                     </View>
                 </View>
-            </Modal>
-        </TouchableWithoutFeedback>);
+            </TouchableWithoutFeedback>
+        </Modal>);
     }
 
     return (
