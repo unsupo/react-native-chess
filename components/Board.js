@@ -79,8 +79,8 @@ const Board = () => {
             pressed['to'].concat(pressed['take']).indexOf(coords) >= 0) {
             let promotion = "";
             if (pressed['promotion'].indexOf(coords) >= 0) {
-                setModalVisible(true);
-                promotion = "q";
+                return setModalVisible(true);
+                // promotion = "q";
             }
             if (promotion)
                 chess.move({
