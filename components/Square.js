@@ -54,14 +54,20 @@ const colors = {
     AH: '#F6F669',
     BH: '#BACA2B'
 }
-const highlight = (props) =>{
-    
+const getColor = (props) =>{
+    let c = colors.A; let ch = colors.AH;
+    if(props.color === 1){
+        c = colors.B; ch = colors.BH;
+    }
+    if([props.from, props.history.from, props.history.to].indexOf(props.coord) >= 0)
+        return ch;
+    return c;
 }
 
 const styles = (props) => StyleSheet.create({
     width: props.size,
     height: props.size,
-    backgroundColor: props.from === props.coord ? props.color === 0 ? colors.AH : colors.BH : props.color === 0 ? colors.A : colors.B,
+    backgroundColor: getColor(props),
     text: {
         color: props.color === 0 ? colors.B : colors.A,
         fontWeight: "bold"
