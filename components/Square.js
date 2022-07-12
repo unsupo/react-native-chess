@@ -54,7 +54,7 @@ const colors = {
 const styles = (props) => StyleSheet.create({
     width: props.size,
     height: props.size,
-    backgroundColor: props.color === 1 ? colors.A : colors.B,
+    backgroundColor: props.color === 0 ? colors.A : colors.B,
 });
 
 export default Square;
