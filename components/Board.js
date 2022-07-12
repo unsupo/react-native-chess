@@ -131,8 +131,7 @@ const Board = () => {
         >
             <TouchableWithoutFeedback onPress={() => setModalVisible(!modalVisible)}>
                 <View style={modalStyles.centeredView}>
-                    <TouchableWithoutFeedback onPress={() => {
-                    }}>
+                    <TouchableWithoutFeedback onPress={() => {}}>
                         <View style={modalStyles.modalView}>
                             <Text style={modalStyles.modalText}>Hello World!</Text>
                             <Pressable
