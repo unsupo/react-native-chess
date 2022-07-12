@@ -133,12 +133,11 @@ const Board = () => {
                 <View style={modalStyles.centeredView}>
                     <TouchableWithoutFeedback onPress={() => {}}>
                         <View style={modalStyles.modalView}>
-                            <Text style={modalStyles.modalText}>Hello World!</Text>
-                            <Pressable
+                            <Pressable forea
                                 style={[modalStyles.button, modalStyles.buttonClose]}
                                 onPress={() => setModalVisible(!modalVisible)}
                             >
-                                <Text style={modalStyles.textStyle}>Hide Modal</Text>
+
                             </Pressable>
                         </View>
                     </TouchableWithoutFeedback>
