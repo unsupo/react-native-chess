@@ -9,7 +9,7 @@
 import React, {useCallback, useEffect, useState} from 'react';
 import {
     Dimensions, Modal, Pressable,
-    StyleSheet, Text, TouchableHighlight, View,
+    StyleSheet, Text, TouchableHighlight, TouchableOpacity, View,
 } from 'react-native';
 import Square from "./Square";
 import {Chess} from "chess.js";
@@ -129,28 +129,30 @@ const Board = () => {
                 setModalVisible(!modalVisible);
             }}
         >
-            <View style={modalStyles.centeredView}>
-                <View style={modalStyles.modalView}>
-                    <Text style={modalStyles.modalText}>Hello World!</Text>
-                    <Pressable
-                        style={[modalStyles.button, modalStyles.buttonClose]}
-                        onPress={() => setModalVisible(!modalVisible)}
-                    >
-                        <Text style={modalStyles.textStyle}>Hide Modal</Text>
-                    </Pressable>
+            <TouchableOpacity activeOpacity={1} onPressOut={() => setModalVisible(false)}>
+                <View style={modalStyles.centeredView}>
+                    <View style={modalStyles.modalView}>
+                        <Text style={modalStyles.modalText}>Hello World!</Text>
+                        <Pressable
+                            style={[modalStyles.button, modalStyles.buttonClose]}
+                            onPress={() => setModalVisible(!modalVisible)}
+                        >
+                            <Text style={modalStyles.textStyle}>Hide Modal</Text>
+                        </Pressable>
+                    </View>
                 </View>
-            </View>
+            </TouchableOpacity>
         </Modal>);
     }
 
     return (
         <View style={{flexDirection: 'row', width: size, height: size, backgroundColor: '#8d00d4'}}>
-            <PromotionModal />
+            <PromotionModal/>
             {[...Array(w)].map((x, i) =>
                 <View style={styles.row} key={i}>
                     {[...Array(h)].map((y, j) =>
                         <TouchableHighlight key={i + ',' + j + "touch"}
-                                            onPress={() => squarePressed(i, j) }>
+                                            onPress={() => squarePressed(i, j)}>
                             <Square piece={board[j][i]} key={i + ',' + j} size={size / w}
                                     coord={convertCord(i, j)}
                                     take={pressed['take']}
