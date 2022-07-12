@@ -59,7 +59,7 @@ const getColor = (props) =>{
     if(props.color === 1){
         c = colors.B; ch = colors.BH;
     }
-    if([props.from, props.history.from, props.history.to].indexOf(props.coord) >= 0)
+    if([props.from, props.history.from || "nullC", props.history.to || "nullC"].indexOf(props.coord) >= 0)
         return ch;
     return c;
 }
