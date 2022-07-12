@@ -7,27 +7,10 @@
  */
 
 import React from 'react';
-import {
-    Image, ImageBackground,
-    StyleSheet, Text, View,
-} from 'react-native';
-import { Svg, Defs, Rect, Mask, Circle } from 'react-native-svg';
+import {ImageBackground, StyleSheet, Text,} from 'react-native';
+import {Circle, Defs, Mask, Rect, Svg} from 'react-native-svg';
+import {pieces} from "./Pieces";
 
-
-const pieces = [
-    require('../resources/pieces/bb.png'),
-    require('../resources/pieces/bk.png'),
-    require('../resources/pieces/bn.png'),
-    require('../resources/pieces/bp.png'),
-    require('../resources/pieces/bq.png'),
-    require('../resources/pieces/br.png'),
-    require('../resources/pieces/wb.png'),
-    require('../resources/pieces/wk.png'),
-    require('../resources/pieces/wn.png'),
-    require('../resources/pieces/wp.png'),
-    require('../resources/pieces/wq.png'),
-    require('../resources/pieces/wr.png'),
-]
 
 const Square = (props) => {
     return (

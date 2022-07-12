@@ -8,13 +8,14 @@
 
 import React, {useCallback, useEffect, useState} from 'react';
 import {
-    Dimensions, Modal, Pressable, ScrollView,
+    Dimensions, Image, Modal, Pressable, ScrollView,
     StyleSheet, Text, TouchableHighlight, TouchableOpacity, TouchableWithoutFeedback, View,
 } from 'react-native';
 import Square from "./Square";
 import {Chess} from "chess.js";
+import {pieces} from "./Pieces";
 
-const pieces = {
+const piecesPos = {
     bb: 0,
     bk: 1,
     bn: 2,
@@ -36,10 +37,10 @@ const defaultBoard = (w, h) => {
             def[i].push(-1);
         }
     }
-    def[0] = [pieces.br, pieces.bn, pieces.bb, pieces.bq, pieces.bk, pieces.bb, pieces.bn, pieces.br]
-    def[1] = Array(w).fill(pieces.bp);
-    def[def.length - 1] = [pieces.wr, pieces.wn, pieces.wb, pieces.wq, pieces.wk, pieces.wb, pieces.wn, pieces.wr]
-    def[def.length - 2] = Array(w).fill(pieces.wp);
+    def[0] = [piecesPos.br, piecesPos.bn, piecesPos.bb, piecesPos.bq, piecesPos.bk, piecesPos.bb, piecesPos.bn, piecesPos.br]
+    def[1] = Array(w).fill(piecesPos.bp);
+    def[def.length - 1] = [piecesPos.wr, piecesPos.wn, piecesPos.wb, piecesPos.wq, piecesPos.wk, piecesPos.wb, piecesPos.wn, piecesPos.wr]
+    def[def.length - 2] = Array(w).fill(piecesPos.wp);
     return def
 }
 const convert = (board) => {
@@ -47,7 +48,7 @@ const convert = (board) => {
     board.forEach((row, i) => {
         const v = []
         row.forEach((col, j) => {
-            v.push(col ? pieces[col['color'] + col['type']] : -1)
+            v.push(col ? piecesPos[col['color'] + col['type']] : -1)
         })
         nBoard.push(v);
     });
@@ -133,12 +134,14 @@ const Board = () => {
                 <View style={modalStyles.centeredView}>
                     <TouchableWithoutFeedback onPress={() => {}}>
                         <View style={modalStyles.modalView}>
-                            <Pressable forea
-                                style={[modalStyles.button, modalStyles.buttonClose]}
-                                onPress={() => setModalVisible(!modalVisible)}
-                            >
-
-                            </Pressable>
+                            {["q","n","r","b"].forEach(value =>
+                                <Pressable
+                                    style={[modalStyles.button, modalStyles.buttonClose]}
+                                    onPress={() => setModalVisible(!modalVisible)}
+                                >
+                                    <Image source={pieces[chess.turn()+value]} />
+                                </Pressable>
+                            )}
                         </View>
                     </TouchableWithoutFeedback>
                 </View>
