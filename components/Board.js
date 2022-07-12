@@ -139,7 +139,6 @@ const Board = () => {
                                     style={[modalStyles.button, modalStyles.buttonClose]}
                                     onPress={() => setModalVisible(!modalVisible)}
                                 >
-                                    {console.log(piecesPos[chess.turn()+value])}
                                     <Image source={pieces[piecesPos[chess.turn()+value]]} />
                                 </Pressable>
                             )}
@@ -205,6 +204,7 @@ const modalStyles = StyleSheet.create({
         marginTop: 22
     },
     modalView: {
+        width: "100%",
         margin: 20,
         backgroundColor: "white",
         borderRadius: 20,
