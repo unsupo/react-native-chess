@@ -110,6 +110,9 @@ const Board = () => {
                 chess.move({from: pressed.from, to: coords});
             // console.log({from: pressed.from, to: coords, p: p})
             setBoard(convert(chess.board()));
+            getBestMove(chess.fen()).then(value => {
+                chess.move(from: value.splice(0,2))
+            })
             return setPressed({});
         }
         const obj = {};
