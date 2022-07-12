@@ -77,10 +77,21 @@ const Board = () => {
     }, []);
 
     async function getBestMove(fen) {
+        var details = {
+            'fen': fen
+        };
+
+        var formBody = [];
+        for (var property in details) {
+            var encodedKey = encodeURIComponent(property);
+            var encodedValue = encodeURIComponent(details[property]);
+            formBody.push(encodedKey + "=" + encodedValue);
+        }
+        formBody = formBody.join("&");
         const response = await fetch('http://localhost:8080', {method: 'POST',
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
-            }, body: JSON.stringify({'fen': fen})}).catch(reason => console.log("request error: "+reason));
+            }, body: formBody}).catch(reason => console.log("request error: "+reason));
         // const response = await fetch('https://api.m3o.com/v1/helloworld/Call').catch(reason => console.log("request error: "+reason));
 
         return response ? response.json() : "";
