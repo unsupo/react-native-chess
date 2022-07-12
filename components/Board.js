@@ -185,7 +185,7 @@ const Board = () => {
 
 
     const [bestMove, setBestMove] = useState<string>('');
-    const [startPosition, setStartPosition] = useState<string>(INITIAL_POSITION);
+    const [startPosition, setStartPosition] = useState<string>(chess.fen());
     const [error, setError] = useState<boolean>(false);
     const [gameOver, setGameOver] = useState<boolean>(false);
     const [thinkingTime, setThinkingTime] = useState<number>(500);
