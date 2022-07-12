@@ -14,7 +14,14 @@ import {
 import Square from "./Square";
 import {Chess} from "chess.js";
 import {pieces} from "./Pieces";
-import {AI} from "./ai"
+
+// In startup hook
+const eventEmitter = new NativeEventEmitter(NativeModules.ReactNativeStockfishChessEngine);
+// Also you need to listen to the event 'stockfish-output' in order to get output lines from Stockfish.
+const eventListener = eventEmitter.addListener('stockfish-output', (line) => {
+    console.log("Stockfish output: "+line);
+});
+await mainLoop(); // starts the engine process.
 
 const piecesPos = {
     bb: 0,
@@ -72,7 +79,7 @@ const Board = () => {
     const [modalVisible, setModalVisible] = useState(false);
     const [promotion, setPromotion] = useState("");
     const [squarePressedVal, setSquarePressedVal] = useState([]);
-    
+
     useEffect(() => setBoard(convert(chess.board())), []);
 
     function squarePressed(i, j, p) {
