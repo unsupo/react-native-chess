@@ -14,8 +14,6 @@
     "react": "18.0.0",
     "react-native": "0.69.1",
     "react-native-svg": "^12.3.0",
-    "rn-nodeify": "^10.3.0",
-    "stockfish": "^15.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
