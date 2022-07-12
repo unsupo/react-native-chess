@@ -10,12 +10,14 @@ export class AI {
     eventListener = this.eventEmitter.addListener('stockfish-output', (line) => {
         console.log("Stockfish output: " + line);
     });
-
-    async constructor() {
-        await mainLoop(); // starts the engine process.
+    started = false;
+    async init() {
+        if(!this.started)
+            await mainLoop(); // starts the engine process.
+        this.started = true;
     }
-
     async getBestMove(fen){
+        await this.init();
         // await sendCommand("position start\n");
         await sendCommand("ucinewgame");
         await sendCommand("position fen " + fen);
