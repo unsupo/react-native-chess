@@ -72,7 +72,7 @@ const Board = () => {
     const [modalVisible, setModalVisible] = useState(false);
     const [promotion, setPromotion] = useState("");
     const [squarePressedVal, setSquarePressedVal] = useState([]);
-
+    
     useEffect(() => setBoard(convert(chess.board())), []);
 
     function squarePressed(i, j, p) {
