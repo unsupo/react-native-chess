@@ -19,7 +19,7 @@ class AI {
         // await sendCommand("position start\n");
         await sendCommand("ucinewgame");
         await sendCommand("position fen " + fen);
-        await sendCommand("go depth 18");
+        await sendCommand("go movetime 1000");
     }
 
     async stop() {
