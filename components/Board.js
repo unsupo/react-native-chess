@@ -134,9 +134,9 @@ const Board = () => {
                 <View style={modalStyles.centeredView}>
                     <TouchableWithoutFeedback onPress={() => {}}>
                         <View style={modalStyles.modalView}>
-                            {["q","n","r","b"].forEach(value =>
+                            {/*{["q","n","r","b"].forEach(value =>*/}
                                 <Text>{pieces[piecesPos[chess.turn()+value]]}</Text>
-                            )}
+                            {/*)}*/}
                         </View>
                     </TouchableWithoutFeedback>
                 </View>
