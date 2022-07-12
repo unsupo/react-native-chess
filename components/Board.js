@@ -181,7 +181,7 @@ Look
 a-h on bottom row
 
 
-highlight last move
+highlight last move both in yellow
 
 AI
 bitboard
