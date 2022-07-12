@@ -199,8 +199,7 @@ const modalStyles = StyleSheet.create({
         marginTop: 22
     },
     imageView: {
-        width: '100%',
-        height: '100%'
+        width: 20,
     },
     modalView: {
         margin: 20,
