@@ -134,7 +134,7 @@ const Board = () => {
                 <View style={modalStyles.centeredView}>
                     <TouchableWithoutFeedback onPress={() => {}}>
                         <View style={modalStyles.modalView}>
-                            {["q","n","r","b"].forEach(value =>
+                            {["q","n","r","b"].map(value =>
                                 <Text>hi</Text>
                             )}
                         </View>
