@@ -187,6 +187,8 @@ options|new|analysis|back|forward
 options -> (modal) flip board, copy PNG, resing
 new -> (modal) are you sure you want to end this game cancel, end game
 
+your username at bottom
+opp username at top (AI)
 
 AI
 bitboard
