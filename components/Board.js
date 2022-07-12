@@ -77,6 +77,7 @@ const Board = () => {
     useEffect(() => setBoard(convert(chess.board())), []);
 
     function squarePressed(i, j, p) {
+        ai.getBestMove(chess.fen()).then(r => console.log("AI Best Move: "+r));
         // console.log("HISTORY: "+JSON.stringify(chess.history({verbose: true}).slice(-1)[0] ));
         const coords = convertCord(i, j);
         if (pressed && (pressed['to'] || pressed['take']) &&
@@ -125,7 +126,6 @@ const Board = () => {
         // console.log(chess.fen())
         setPressed(obj)
         // stockfish.
-        ai.getBestMove(chess.fen()).then(r => console.log("AI Best Move: "+r));
     }
 
     const PromotionModal = () => {
