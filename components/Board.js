@@ -85,7 +85,10 @@ const Board = () => {
         const eventListener = eventEmitter.addListener('stockfish-output', (line) => {
             console.log("Stockfish output: "+line);
         });
-        const asyncMainLoop = async () => mainLoop() // starts the engine process.
+        const asyncMainLoop = async () => {
+            await mainLoop()
+            await sendCommand("position start\n")
+        } // starts the engine process.
         asyncMainLoop()
     }, []);
 
