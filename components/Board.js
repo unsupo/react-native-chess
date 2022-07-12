@@ -60,6 +60,7 @@ const convertCord = (x, y) => {
 }
 
 const chess = new Chess();
+const stockfish = require("stockfish");
 const Board = () => {
     // 12 boards 1 for each type of piece 64bit integer
     const w = 8;
@@ -123,6 +124,7 @@ const Board = () => {
         // console.log(moves);
         // console.log(chess.fen())
         setPressed(obj)
+        // stockfish.
     }
 
     const PromotionModal = () => {
