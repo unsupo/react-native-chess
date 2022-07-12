@@ -135,7 +135,7 @@ const Board = () => {
                     <TouchableWithoutFeedback onPress={() => {}}>
                         <View style={modalStyles.modalView}>
                             {["q","n","r","b"].forEach(value =>
-                                <Image source={pieces[piecesPos[chess.turn()+value]]} />
+                                return <Image source={pieces[piecesPos[chess.turn()+value]]} />
                             )}
                         </View>
                     </TouchableWithoutFeedback>
