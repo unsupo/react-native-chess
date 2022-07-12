@@ -3,7 +3,7 @@ import { mainLoop, shutdownStockfish, sendCommand } from 'react-native-stockfish
 import { NativeEventEmitter, NativeModules } from 'react-native'; // in order to read Stockfish output.
 
 
-class AI {
+export class AI {
     // In startup hook
     eventEmitter = new NativeEventEmitter(NativeModules.ReactNativeStockfishChessEngine);
     // Also you need to listen to the event 'stockfish-output' in order to get output lines from Stockfish.
@@ -31,4 +31,4 @@ class AI {
 
 
 // When you need to send a command (e.g) : don't forget the newline character :
-await sendCommand("position start\n");
+// await sendCommand("position start\n");

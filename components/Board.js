@@ -14,6 +14,7 @@ import {
 import Square from "./Square";
 import {Chess} from "chess.js";
 import {pieces} from "./Pieces";
+import {AI} from "./ai"
 
 const piecesPos = {
     bb: 0,
@@ -61,6 +62,7 @@ const convertCord = (x, y) => {
 
 const chess = new Chess();
 const Board = () => {
+    const ai = new AI();
     const w = 8;
     const h = 8;
     const windowWidth = Dimensions.get('window').width;
@@ -123,6 +125,7 @@ const Board = () => {
         // console.log(chess.fen())
         setPressed(obj)
         // stockfish.
+        ai.getBestMove(chess.fen()).then(r => console.log(r));
     }
 
     const PromotionModal = () => {
