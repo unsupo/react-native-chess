@@ -70,7 +70,7 @@ const Board = () => {
     const [board, setBoard] = useState(Array(w).fill(0).map(row => Array(h).fill(0)));
     const [pressed, setPressed] = useState({});
     const [modalVisible, setModalVisible] = useState(false);
-    const [promotion, setPromotion] = useState();
+    const [promotion, setPromotion] = useState("");
 
     useEffect(() => setBoard(convert(chess.board())), []);
 
@@ -89,7 +89,7 @@ const Board = () => {
                     to: coords,
                     promotion: promotion
                 });
-                setPromotion();
+                setPromotion("");
             }else
                 chess.move({from: pressed.from, to: coords});
             console.log({from: pressed.from, to: coords})
