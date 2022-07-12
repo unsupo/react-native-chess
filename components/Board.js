@@ -129,6 +129,11 @@ const Board = () => {
             )}
         </View>
     );
+
+
+    const PromotionModal = () => {
+        
+    }
 };
 
 /*
