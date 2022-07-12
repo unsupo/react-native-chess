@@ -82,9 +82,11 @@ const Board = () => {
     const [promotion, setPromotion] = useState("");
     const [squarePressedVal, setSquarePressedVal] = useState([]);
 
-    useEffect(async () => {
+    useEffect(() => {
         setBoard(convert(chess.board()));
-        mainLoop(); // starts the engine process.
+        (async function () {
+            await mainLoop();
+        })() // starts the engine process.
     }, []);
 
     function squarePressed(i, j, p) {
