@@ -15,7 +15,10 @@ class AI {
         await mainLoop(); // starts the engine process.
     }
 
-    
+    async getBestMove(fen){
+        await sendCommand("position start\n");
+
+    }
 
     async stop() {
         // In will destroy hook
