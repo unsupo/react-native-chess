@@ -2,6 +2,8 @@
 import { mainLoop, shutdownStockfish, sendCommand } from 'react-native-stockfish-android';
 import { NativeEventEmitter, NativeModules } from 'react-native'; // in order to read Stockfish output.
 
+
+
 // In startup hook
 const eventEmitter = new NativeEventEmitter(NativeModules.ReactNativeStockfishChessEngine);
 // Also you need to listen to the event 'stockfish-output' in order to get output lines from Stockfish.
