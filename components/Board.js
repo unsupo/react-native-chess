@@ -135,7 +135,7 @@ const Board = () => {
                     <TouchableWithoutFeedback onPress={() => {}}>
                         <View style={modalStyles.modalView}>
                             {["q","n","r","b"].map(value =>
-                                <Image style={{width: 10}} source={pieces[piecesPos[chess.turn()+value]]} />
+                                <Image style={{width: size/w}} source={pieces[piecesPos[chess.turn()+value]]} />
                             )}
                         </View>
                     </TouchableWithoutFeedback>
