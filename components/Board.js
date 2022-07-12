@@ -18,8 +18,6 @@ import {pieces} from "./Pieces";
 import { mainLoop, shutdownStockfish, sendCommand } from 'react-native-stockfish-android';
 import { NativeEventEmitter, NativeModules } from 'react-native'; // in order to read Stockfish output.
 
-// In startup hook
-const eventEmitter = new NativeEventEmitter(NativeModules.ReactNativeStockfishChessEngine);
 
 const piecesPos = {
     bb: 0,
@@ -81,12 +79,14 @@ const Board = () => {
     useEffect(() => {
         setBoard(convert(chess.board()));
         const asyncMainLoop = async () => {
+            // In startup hook
+            const eventEmitter = new NativeEventEmitter(NativeModules.ReactNativeStockfishChessEngine);
             // Also you need to listen to the event 'stockfish-output' in order to get output lines from Stockfish.
             const eventListener = eventEmitter.addListener('stockfish-output', (line) => {
                 console.log("Stockfish output: "+line);
             });
             await mainLoop()
-            // await sendCommand("ucinewgame\nposition fen " + chess.fen() + "\ngo movetime 1000\n")
+            await sendCommand("ucinewgame\nposition fen " + chess.fen() + "\ngo movetime 1000\n")
         } // starts the engine process.
         asyncMainLoop()
     }, []);
