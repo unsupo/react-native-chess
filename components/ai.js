@@ -16,8 +16,10 @@ class AI {
     }
 
     async getBestMove(fen){
-        await sendCommand("position start\n");
-
+        // await sendCommand("position start\n");
+        await sendCommand("ucinewgame");
+        await sendCommand("position fen " + fen);
+        await sendCommand("go depth 18");
     }
 
     async stop() {
