@@ -196,7 +196,6 @@ const modalStyles = StyleSheet.create({
         flex: 1,
         justifyContent: "center",
         alignItems: "center",
-        marginTop: 22
     },
     imageView: {
         flex: 1,
@@ -215,26 +214,6 @@ const modalStyles = StyleSheet.create({
         shadowRadius: 4,
         elevation: 5
     },
-    button: {
-        borderRadius: 20,
-        padding: 10,
-        elevation: 2
-    },
-    buttonOpen: {
-        backgroundColor: "#F194FF",
-    },
-    buttonClose: {
-        backgroundColor: "#2196F3",
-    },
-    textStyle: {
-        color: "white",
-        fontWeight: "bold",
-        textAlign: "center"
-    },
-    modalText: {
-        marginBottom: 15,
-        textAlign: "center"
-    }
 });
 
 export default Board;
