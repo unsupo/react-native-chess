@@ -24,7 +24,6 @@ const eventEmitter = new NativeEventEmitter(NativeModules.ReactNativeStockfishCh
 const eventListener = eventEmitter.addListener('stockfish-output', (line) => {
     console.log("Stockfish output: "+line);
 });
-await mainLoop(); // starts the engine process.
 
 const piecesPos = {
     bb: 0,
@@ -83,7 +82,10 @@ const Board = () => {
     const [promotion, setPromotion] = useState("");
     const [squarePressedVal, setSquarePressedVal] = useState([]);
 
-    useEffect(() => setBoard(convert(chess.board())), []);
+    useEffect(() =>{
+        setBoard(convert(chess.board()));
+        mainLoop().then(r => ); // starts the engine process.
+    }, []);
 
     function squarePressed(i, j, p) {
         ai.getBestMove(chess.fen()).then(r => console.log("AI Best Move: "+r));
