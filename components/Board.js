@@ -8,8 +8,8 @@
 
 import React, {useCallback, useEffect, useState} from 'react';
 import {
-    Dimensions, Modal, Pressable,
-    StyleSheet, Text, TouchableHighlight, TouchableOpacity, View,
+    Dimensions, Modal, Pressable, ScrollView,
+    StyleSheet, Text, TouchableHighlight, TouchableOpacity, TouchableWithoutFeedback, View,
 } from 'react-native';
 import Square from "./Square";
 import {Chess} from "chess.js";
@@ -130,17 +130,21 @@ const Board = () => {
             }}
         >
             <TouchableOpacity activeOpacity={1} onPressOut={() => setModalVisible(false)}>
-                <View style={modalStyles.centeredView}>
-                    <View style={modalStyles.modalView}>
-                        <Text style={modalStyles.modalText}>Hello World!</Text>
-                        <Pressable
-                            style={[modalStyles.button, modalStyles.buttonClose]}
-                            onPress={() => setModalVisible(!modalVisible)}
-                        >
-                            <Text style={modalStyles.textStyle}>Hide Modal</Text>
-                        </Pressable>
-                    </View>
-                </View>
+                <ScrollView directionalLockEnabled={true}>
+                    <TouchableWithoutFeedback>
+                        <View style={modalStyles.centeredView}>
+                            <View style={modalStyles.modalView}>
+                                <Text style={modalStyles.modalText}>Hello World!</Text>
+                                <Pressable
+                                    style={[modalStyles.button, modalStyles.buttonClose]}
+                                    onPress={() => setModalVisible(!modalVisible)}
+                                >
+                                    <Text style={modalStyles.textStyle}>Hide Modal</Text>
+                                </Pressable>
+                            </View>
+                        </View>
+                    </TouchableWithoutFeedback>
+                </ScrollView>
             </TouchableOpacity>
         </Modal>);
     }
