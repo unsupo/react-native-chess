@@ -111,7 +111,7 @@ const Board = () => {
             // console.log({from: pressed.from, to: coords, p: p})
             setBoard(convert(chess.board()));
             getBestMove(chess.fen()).then(value => {
-                chess.move(from: value.splice(0,2))
+                chess.move(from: value.slice(0,2), to: value.slice(2,4))
             })
             return setPressed({});
         }
