@@ -123,8 +123,10 @@ const Board = () => {
             }else
                 chess.move({from: pressed.from, to: coords});
             console.log(chess.fen())
-            getBestMove(chess.fen()).then(value => chess.move({from: value['bestMove'].slice(0,2), to: value['bestMove'].slice(2,4)}))
-            setBoard(convert(chess.board()));
+            getBestMove(chess.fen()).then(value => {
+                chess.move({from: value['bestMove'].slice(0,2), to: value['bestMove'].slice(2,4)});
+                setBoard(convert(chess.board()));
+            });
             return setPressed({});
         }
         const obj = {};
