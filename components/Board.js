@@ -70,6 +70,7 @@ const Board = () => {
     const [board, setBoard] = useState(Array(w).fill(0).map(row => Array(h).fill(0)));
     const [pressed, setPressed] = useState({});
     const [modalVisible, setModalVisible] = useState(false);
+    const [promotion, setPromotion] = useState();
 
     useEffect(() => setBoard(convert(chess.board())), []);
 
@@ -78,18 +79,18 @@ const Board = () => {
         const coords = convertCord(i, j);
         if (pressed && (pressed['to'] || pressed['take']) &&
             pressed['to'].concat(pressed['take']).indexOf(coords) >= 0) {
-            let promotion = "";
-            if (pressed['promotion'].indexOf(coords) >= 0) {
+            if (pressed['promotion'].indexOf(coords) >= 0 && !promotion) {
                 return setModalVisible(true);
                 // promotion = "q";
             }
-            if (promotion)
+            if (promotion) {
                 chess.move({
                     from: pressed.from,
                     to: coords,
                     promotion: promotion
                 });
-            else
+                setPromotion();
+            }else
                 chess.move({from: pressed.from, to: coords});
             console.log({from: pressed.from, to: coords})
             setBoard(convert(chess.board()));
@@ -132,10 +133,14 @@ const Board = () => {
         >
             <TouchableWithoutFeedback onPress={() => setModalVisible(!modalVisible)}>
                 <View style={modalStyles.centeredView}>
-                    <TouchableWithoutFeedback onPress={() => {}}>
+                    <TouchableWithoutFeedback onPress={() => {
+                    }}>
                         <View style={modalStyles.modalView}>
-                            {["q","n","r","b"].map(value =>
-                                <Image style={{width: size/(w-1), height: size/(w-1)}} source={pieces[piecesPos[chess.turn()+value]]} />
+                            {["q", "n", "r", "b"].map(value =>
+                                <Pressable onPress={()=>setPromotion(value)}>
+                                    <Image style={{width: size / (w - 1), height: size / (w - 1)}}
+                                           source={pieces[piecesPos[chess.turn() + value]]}/>
+                                </Pressable>
                             )}
                         </View>
                     </TouchableWithoutFeedback>
