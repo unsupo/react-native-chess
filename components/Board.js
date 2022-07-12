@@ -84,7 +84,7 @@ const Board = () => {
 
     useEffect(() => {
         setBoard(convert(chess.board()));
-        (async function () {
+        return (async function () {
             await mainLoop();
         })() // starts the engine process.
     }, []);
