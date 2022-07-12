@@ -139,6 +139,7 @@ const Board = () => {
                                     style={[modalStyles.button, modalStyles.buttonClose]}
                                     onPress={() => setModalVisible(!modalVisible)}
                                 >
+                                    {console.log(piecesPos[chess.turn()+value])}
                                     <Image source={pieces[piecesPos[chess.turn()+value]]} />
                                 </Pressable>
                             )}
