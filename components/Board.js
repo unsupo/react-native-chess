@@ -62,7 +62,6 @@ const convertCord = (x, y) => {
 
 const chess = new Chess();
 const Board = () => {
-    const ai = new AI();
     const w = 8;
     const h = 8;
     const windowWidth = Dimensions.get('window').width;

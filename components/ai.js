@@ -4,12 +4,6 @@ import { NativeEventEmitter, NativeModules } from 'react-native'; // in order to
 
 
 export class AI {
-    // In startup hook
-    eventEmitter = new NativeEventEmitter(NativeModules.ReactNativeStockfishChessEngine);
-    // Also you need to listen to the event 'stockfish-output' in order to get output lines from Stockfish.
-    eventListener = this.eventEmitter.addListener('stockfish-output', (line) => {
-        console.log("Stockfish output: " + line);
-    });
     started = false;
     async init() {
         if(!this.started)
