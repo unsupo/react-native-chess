@@ -20,10 +20,6 @@ import { NativeEventEmitter, NativeModules } from 'react-native'; // in order to
 
 // In startup hook
 const eventEmitter = new NativeEventEmitter(NativeModules.ReactNativeStockfishChessEngine);
-// Also you need to listen to the event 'stockfish-output' in order to get output lines from Stockfish.
-const eventListener = eventEmitter.addListener('stockfish-output', (line) => {
-    console.log("Stockfish output: "+line);
-});
 
 const piecesPos = {
     bb: 0,
@@ -84,6 +80,11 @@ const Board = () => {
 
     useEffect(() => {
         setBoard(convert(chess.board()));
+
+        // Also you need to listen to the event 'stockfish-output' in order to get output lines from Stockfish.
+        const eventListener = eventEmitter.addListener('stockfish-output', (line) => {
+            console.log("Stockfish output: "+line);
+        });
         const asyncMainLoop = async () => mainLoop() // starts the engine process.
         asyncMainLoop()
     }, []);
