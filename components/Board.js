@@ -14,6 +14,9 @@ import {
 import Square from "./Square";
 import {Chess} from "chess.js";
 import {pieces} from "./Pieces";
+// Notice that all methods are asynchronous.
+import { mainLoop, shutdownStockfish, sendCommand } from 'react-native-stockfish-android';
+import { NativeEventEmitter, NativeModules } from 'react-native'; // in order to read Stockfish output.
 
 // In startup hook
 const eventEmitter = new NativeEventEmitter(NativeModules.ReactNativeStockfishChessEngine);
@@ -132,6 +135,8 @@ const Board = () => {
         // console.log(chess.fen())
         setPressed(obj)
         // stockfish.
+        sendCommand("ucinewgame\nposition fen " + fen + "\ngo movetime 1000\n").then(r=>console.log("DONE: "+r));
+
     }
 
     const PromotionModal = () => {
