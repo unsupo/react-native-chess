@@ -19,9 +19,7 @@ export class AI {
     async getBestMove(fen){
         await this.init();
         // await sendCommand("position start\n");
-        await sendCommand("ucinewgame");
-        await sendCommand("position fen " + fen);
-        await sendCommand("go movetime 1000");
+        await sendCommand("ucinewgame\nposition fen " + fen+"\ngo movetime 1000\n");
     }
 
     async stop() {
