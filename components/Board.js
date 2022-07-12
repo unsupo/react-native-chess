@@ -108,7 +108,7 @@ const Board = () => {
                 setSquarePressedVal([]);
             }else
                 chess.move({from: pressed.from, to: coords});
-            // console.log({from: pressed.from, to: coords, p: p})
+            console.log(chess.fen())
             getBestMove(chess.fen()).then(value => console.log({from: value['bestMove'].slice(0,2), to: value['bestMove'].slice(2,4)}))
             setBoard(convert(chess.board()));
             return setPressed({});
