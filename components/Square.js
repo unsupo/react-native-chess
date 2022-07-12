@@ -52,7 +52,7 @@ const colors = {
     A: '#d0c1a9',
     B: '#346e37',
     AH: '#d0c1a9',
-    BH: '#346e37'
+    BH: '#BACA2B'
 }
 const styles = (props) => StyleSheet.create({
     width: props.size,
