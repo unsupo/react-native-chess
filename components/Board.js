@@ -135,7 +135,7 @@ const Board = () => {
                     <TouchableWithoutFeedback onPress={() => {}}>
                         <View style={modalStyles.modalView}>
                             {["q","n","r","b"].map(value =>
-                                <Image source={pieces[piecesPos[chess.turn()+value]]} />
+                                <Image style={modalStyles.imageView} source={pieces[piecesPos[chess.turn()+value]]} />
                             )}
                         </View>
                     </TouchableWithoutFeedback>
@@ -197,6 +197,9 @@ const modalStyles = StyleSheet.create({
         justifyContent: "center",
         alignItems: "center",
         marginTop: 22
+    },
+    imageView: {
+        width: '20%'
     },
     modalView: {
         margin: 20,
