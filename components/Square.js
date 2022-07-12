@@ -51,7 +51,7 @@ const PossibleTakeMove = () => {
 const colors = {
     A: '#EEEED2',
     B: '#769656',
-    AH: '#d0c1a9',
+    AH: '#F6F669',
     BH: '#BACA2B'
 }
 const styles = (props) => StyleSheet.create({
