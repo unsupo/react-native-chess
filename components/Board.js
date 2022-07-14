@@ -59,7 +59,7 @@ const convertCord = (x, y) => {
     return alphaCord[x] + (8 - y);
 }
 
-const chess = new Chess();
+const chess = new Chess("3qk3/8/8/8/8/8/PPPPPPPP/RNBQKBNR w KQ - 0 1");
 const Board = () => {
     const w = 8;
     const h = 8;
